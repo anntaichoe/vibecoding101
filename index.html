@@ -1,5 +1,384 @@
 <!DOCTYPE html>
-<html>
-<head><title>SLS 480E</title></head>
-<body><h1>SLS 480E: Language Learning with Apps</h1></body>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SLS 480E · Language Learning with Apps</title>
+<meta name="description" content="SLS 480E: Language Learning with Apps — Hawaiʻi Pacific University">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16232B;
+    --ink-soft:#1F323C;
+    --paper:#E8E2D2;
+    --paper-soft:#F1EDE0;
+    --rose:#D6456F;
+    --sea:#3E8C7E;
+    --text-on-dark:#F3EFE4;
+    --text-on-dark-muted:#B9C2C4;
+    --text-on-light:#22303A;
+    --text-muted:#5C6B72;
+    --radius:10px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'IBM Plex Sans', -apple-system, sans-serif;
+    color:var(--text-on-light);
+    background:var(--paper-soft);
+    line-height:1.55;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', Georgia, serif;
+    font-weight:600;
+    margin:0 0 .4em 0;
+  }
+  a{color:inherit;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 28px;}
+  section{padding:88px 0;}
+
+  /* ---------- Header ---------- */
+  header.top{
+    position:sticky; top:0; z-index:10;
+    background:rgba(22,35,43,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(243,239,228,.12);
+  }
+  header.top .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:14px; padding-bottom:14px;
+  }
+  .brand{
+    color:var(--text-on-dark);
+    font-family:'Fraunces', serif; font-weight:600; font-size:1.05rem;
+    text-decoration:none; letter-spacing:.01em;
+  }
+  header.top nav a{
+    color:var(--text-on-dark-muted);
+    text-decoration:none;
+    font-size:.88rem;
+    margin-left:22px;
+  }
+  header.top nav a:hover{color:var(--text-on-dark);}
+  header.top nav a:focus-visible, a:focus-visible, button:focus-visible{
+    outline:2px solid var(--rose); outline-offset:3px; border-radius:3px;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:var(--ink);
+    color:var(--text-on-dark);
+    padding:96px 0 80px;
+  }
+  .eyebrow{
+    display:inline-block;
+    font-size:.76rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--ink);
+    background:var(--paper);
+    padding:5px 12px;
+    border-radius:999px;
+    margin-bottom:26px;
+  }
+  .hero h1{
+    font-size:clamp(2.3rem, 5vw, 3.6rem);
+    max-width:11ch;
+    color:var(--text-on-dark);
+  }
+  .cycle-row{
+    display:flex; align-items:baseline; gap:10px;
+    margin:6px 0 28px;
+    font-size:1.1rem;
+    color:var(--text-on-dark-muted);
+  }
+  .cycle-word{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:1.35rem;
+    color:var(--rose);
+    min-width:9ch;
+    display:inline-block;
+  }
+  .hero p.lede{
+    max-width:52ch;
+    font-size:1.08rem;
+    color:var(--text-on-dark-muted);
+    margin-bottom:34px;
+  }
+  .meta-row{
+    display:flex; flex-wrap:wrap; gap:22px;
+    font-size:.9rem;
+    color:var(--text-on-dark-muted);
+    border-top:1px solid rgba(243,239,228,.15);
+    padding-top:22px;
+  }
+  .meta-row strong{color:var(--text-on-dark); font-weight:500;}
+
+  /* ---------- Light section ---------- */
+  .light{background:var(--paper-soft);}
+  .light .kicker{
+    font-size:.78rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--sea); font-weight:600; margin-bottom:10px;
+  }
+  .light h2{font-size:1.9rem; color:var(--text-on-light); max-width:20ch;}
+  .light p{color:var(--text-muted); max-width:60ch;}
+
+  .build-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:16px;
+    margin-top:34px;
+  }
+  .build-card{
+    background:var(--paper);
+    border-radius:var(--radius);
+    padding:22px 24px;
+  }
+  .build-card h3{font-size:1.02rem; margin-bottom:6px; font-weight:600;}
+  .build-card p{font-size:.92rem; margin:0; max-width:none;}
+
+  /* ---------- Dark section: grading ---------- */
+  .dark{background:var(--ink); color:var(--text-on-dark);}
+  .dark .kicker{
+    font-size:.78rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--rose); font-weight:600; margin-bottom:10px;
+  }
+  .dark h2{color:var(--text-on-dark); font-size:1.9rem; max-width:20ch;}
+  .dark p.note{color:var(--text-on-dark-muted); max-width:56ch; font-size:.94rem;}
+
+  .grade-bars{margin-top:36px;}
+  .grade-row{
+    display:grid; grid-template-columns:190px 1fr 48px;
+    align-items:center; gap:16px;
+    margin-bottom:16px;
+    font-size:.9rem;
+  }
+  .grade-row .label{color:var(--text-on-dark-muted);}
+  .grade-track{
+    height:8px; background:rgba(243,239,228,.12); border-radius:99px; overflow:hidden;
+  }
+  .grade-fill{height:100%; background:var(--sea); border-radius:99px;}
+  .grade-row .pct{text-align:right; color:var(--text-on-dark);}
+
+  /* ---------- Speakers ---------- */
+  .speaker-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:34px;
+  }
+  .speaker-card{
+    background:var(--paper);
+    border-radius:var(--radius);
+    padding:24px;
+    border-left:3px solid var(--sea);
+  }
+  .speaker-card h3{font-size:1rem; margin-bottom:6px;}
+  .speaker-card p{font-size:.92rem; margin:0; max-width:none;}
+  .speaker-tag{
+    display:inline-block; font-size:.72rem; letter-spacing:.05em; text-transform:uppercase;
+    color:var(--sea); margin-bottom:10px; font-weight:600;
+  }
+
+  /* ---------- Final project callout ---------- */
+  .callout{
+    margin-top:34px;
+    background:var(--ink-soft);
+    border:1px solid rgba(214,69,111,.35);
+    border-radius:var(--radius);
+    padding:28px 30px;
+  }
+  .callout p{color:var(--text-on-dark-muted); font-size:.96rem; max-width:60ch; margin:0;}
+  .callout strong{color:var(--rose);}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--ink); color:var(--text-on-dark-muted);
+    padding:40px 0; font-size:.85rem;
+    border-top:1px solid rgba(243,239,228,.1);
+  }
+  footer a{color:var(--text-on-dark); text-decoration:underline;}
+
+  @media (max-width:680px){
+    section{padding:60px 0;}
+    .build-grid, .speaker-grid{grid-template-columns:1fr;}
+    .grade-row{grid-template-columns:120px 1fr 40px; gap:10px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">SLS 480E</a>
+    <nav>
+      <a href="#build">What You'll Build</a>
+      <a href="#grading">Grading</a>
+      <a href="#speakers">Guest Speakers</a>
+      <a href="#project">Final Project</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">SLS 480E · O-Focus</span>
+    <h1>Language Learning<br>with Apps</h1>
+    <div class="cycle-row">
+      <span>Say hello:</span>
+      <span class="cycle-word" id="cycleWord" lang="haw">Aloha</span>
+    </div>
+    <p class="lede">
+      A hands-on course where you design, build, and ship your own language-learning app —
+      then turn the process into a portfolio-ready case study.
+    </p>
+    <div class="meta-row">
+      <span><strong>Fall 2026</strong></span>
+      <span>Hawaiʻi Pacific University</span>
+      <span>Meeting time: TBD</span>
+      <span>Instructor: Ann · office hours TBD</span>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="build">
+  <div class="wrap">
+    <div class="kicker">What You'll Build</div>
+    <h2>Your own app, your own way</h2>
+    <p>
+      Every student builds a working language-learning app over the semester. How you get there
+      is up to you — this course welcomes AI-assisted development (vibecoding included) as well
+      as more traditional approaches.
+    </p>
+    <div class="build-grid">
+      <div class="build-card">
+        <h3>Build with AI</h3>
+        <p>Use tools like Claude or Cursor to move fast from idea to working prototype. Two guest speakers will walk through their own setups.</p>
+      </div>
+      <div class="build-card">
+        <h3>Build your own way</h3>
+        <p>No-code, low-code, or hand-written — any approach is welcome as long as you can explain and defend your design choices.</p>
+      </div>
+      <div class="build-card">
+        <h3>Present and discuss</h3>
+        <p>This is an O-Focus course: presentations, peer feedback, and guided discussion make up the bulk of your grade.</p>
+      </div>
+      <div class="build-card">
+        <h3>Work solo or paired</h3>
+        <p>Depending on the section, you may have the option to build individually or in pairs — details to come.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="grading">
+  <div class="wrap">
+    <div class="kicker">How It's Graded</div>
+    <h2>Weighted toward speaking, not just shipping</h2>
+    <p class="note">
+      The breakdown below reflects the Fall 2025 structure. The Fall 2026 syllabus is still being
+      finalized — exact weights may shift slightly.
+    </p>
+    <div class="grade-bars">
+      <div class="grade-row">
+        <span class="label">Attendance &amp; Participation</span>
+        <span class="grade-track"><span class="grade-fill" style="width:10%"></span></span>
+        <span class="pct">10%</span>
+      </div>
+      <div class="grade-row">
+        <span class="label">Presentations + Peer Feedback</span>
+        <span class="grade-track"><span class="grade-fill" style="width:50%"></span></span>
+        <span class="pct">50%</span>
+      </div>
+      <div class="grade-row">
+        <span class="label">Guided Discussion</span>
+        <span class="grade-track"><span class="grade-fill" style="width:20%"></span></span>
+        <span class="pct">20%</span>
+      </div>
+      <div class="grade-row">
+        <span class="label">Midterm</span>
+        <span class="grade-track"><span class="grade-fill" style="width:10%"></span></span>
+        <span class="pct">10%</span>
+      </div>
+      <div class="grade-row">
+        <span class="label">Final Case Study</span>
+        <span class="grade-track"><span class="grade-fill" style="width:10%"></span></span>
+        <span class="pct">10%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="speakers">
+  <div class="wrap">
+    <div class="kicker">Guest Speakers</div>
+    <h2>Learning how practitioners actually work</h2>
+    <p>Two sessions this semester bring in outside perspectives on AI-assisted app development.</p>
+    <div class="speaker-grid">
+      <div class="speaker-card">
+        <span class="speaker-tag">Session One</span>
+        <h3>Setting Up Vibecoding with Claude</h3>
+        <p>A walkthrough of getting started building apps with Claude, from first prompt to working prototype. Speaker &amp; date TBD.</p>
+      </div>
+      <div class="speaker-card">
+        <span class="speaker-tag">Session Two</span>
+        <h3>Setting Up with Cursor</h3>
+        <p>An alum from last year's course returns to share how they built their project using Cursor. Speaker &amp; date TBD.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="project">
+  <div class="wrap">
+    <div class="kicker">Final Project</div>
+    <h2>A case study you can actually use</h2>
+    <div class="callout">
+      <p>
+        Your final project is a <strong>case study</strong> of the app you built — written and
+        structured so you can drop it straight into your employment portfolio after graduation.
+        Details on format and deadlines will be posted here as the syllabus is finalized.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    SLS 480E · Language Learning with Apps · Hawaiʻi Pacific University<br>
+    Questions? Reach out at <a href="mailto:REPLACE_WITH_EMAIL">REPLACE_WITH_EMAIL</a>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var words = [
+      {text:"Aloha", lang:"haw"},
+      {text:"你好", lang:"zh"},
+      {text:"안녕하세요", lang:"ko"},
+      {text:"こんにちは", lang:"ja"},
+      {text:"Hola", lang:"es"},
+      {text:"Bonjour", lang:"fr"}
+    ];
+    var i = 0;
+    var el = document.getElementById('cycleWord');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce && el) {
+      setInterval(function(){
+        i = (i + 1) % words.length;
+        el.style.opacity = 0;
+        setTimeout(function(){
+          el.textContent = words[i].text;
+          el.lang = words[i].lang;
+          el.style.opacity = 1;
+        }, 200);
+      }, 2200);
+      el.style.transition = 'opacity .2s ease';
+    }
+  })();
+</script>
+
+</body>
 </html>
