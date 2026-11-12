@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Popular Tools | Vibecoding 101</title>
-  <meta name="description" content="Popular vibecoding tools and frontier AI models, with guidance on choosing one as a beginner.">
+  <meta name="description" content="Popular vibecoding tools and frontier AI models you can use to build apps and webpages.">
   <meta name="color-scheme" content="light dark">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <script>
@@ -15,19 +15,18 @@
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
   <a class="skip" href="#main">Skip to main content</a>
   <header class="topbar">
     <div class="wrap">
       <div class="bar glass">
-        <a class="brand" href="index.html"><img src="favicon.svg" alt="" width="28" height="28">Vibecoding 101</a>
-        <nav aria-label="Main"><ul class="nav"><li><a href="index.html">Home</a></li><li><a href="tools.html" aria-current="page">Popular Tools</a></li><li><a href="diy.html">DIY</a></li><li><a href="tips.html">Tips</a></li></ul></nav>
+        <a class="brand" href="index.html">Vibecoding 101</a>
+        <nav aria-label="Main"><ul class="nav"><li><a href="index.html">Home</a></li><li><a href="tools.html" aria-current="page">Popular Tools</a></li><li><a href="diy.html">DIY</a></li></ul></nav>
         <button class="theme" id="themeToggle" type="button" aria-label="Switch to dark mode">
           <svg class="moon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
           <svg class="sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>
-          <span class="label">Dark</span>
         </button>
       </div>
     </div>
@@ -35,22 +34,11 @@
   <main id="main" class="wrap">
     <section class="hero" aria-labelledby="h1">
       <div>
-        <p class="eyebrow">Lesson 2 &middot; About 5 minutes</p>
+        <p class="eyebrow">Page 01</p>
         <h1 id="h1">Popular <span class="hl">Tools</span></h1>
-        <p class="lede">There are two ways in: tools made for building apps, and the everyday AI chatbots that can write code too.</p>
-        <ul class="meta" aria-label="Goal"><li>Goal: choose a tool that fits you</li></ul>
+        <p class="lede">Two ways to vibecode: tools made for building apps, and the everyday AI chatbots that can write code too.</p>
       </div>
       <img class="hero-art sm" src="images/mascot-phone.webp" alt="" width="480" height="488">
-    </section>
-
-    <section aria-labelledby="choose-h">
-      <h2 id="choose-h">How to choose</h2>
-      <p class="note">Start from your situation, not from the longest feature list.</p>
-      <div class="cols">
-        <div class="glass card"><h3>New to all of this?</h3><p>Pick a tool marked <span class="tag easy">Beginner friendly</span>. Use the filter below to see only those.</p></div>
-        <div class="glass card"><h3>Already use an AI chatbot?</h3><p>Stay there. The <a href="#models-h">frontier models</a> can write a full webpage for you, and that is what the DIY lesson uses.</p></div>
-        <div class="glass card"><h3>Have a specific goal?</h3><p>Check the labels. Some tools focus on one job, such as building games.</p></div>
-      </div>
     </section>
 
     <section aria-labelledby="tools-h">
@@ -93,41 +81,10 @@
       </ul>
     </section>
 
-    <section aria-labelledby="check-h">
-      <h2 id="check-h">Quick check</h2>
-      <p class="note">Apply what you just read.</p>
-      <div class="quiz">
-        <fieldset class="q glass">
-          <legend><span class="qn">Question 1 of 2</span>A colleague with no coding experience wants to start today. What should they look for first?</legend>
-          <div class="opts">
-            <label class="opt"><input type="radio" name="tools-q1" data-fb=" More features usually means more to learn. A beginner-friendly label is a better first filter."><span>The tool with the most features.</span></label>
-            <label class="opt"><input type="radio" name="tools-q1" data-correct data-fb=" Starting where the setup is smallest gets a first result quickly, which keeps motivation up."><span>A tool marked Beginner friendly, or a chatbot they already use.</span></label>
-            <label class="opt"><input type="radio" name="tools-q1" data-fb=" Every chatbot in the frontier models list has a free option, and the DIY lesson uses only free tools."><span>A paid plan, because free tools cannot build real things.</span></label>
-          </div>
-          <button class="btn small check" type="button">Check answer</button>
-          <p class="feedback" role="status"></p>
-        </fieldset>
-        <fieldset class="q glass">
-          <legend><span class="qn">Question 2 of 2</span>Which is true about vibecoding with a chatbot such as ChatGPT, Claude or Gemini?</legend>
-          <div class="opts">
-            <label class="opt"><input type="radio" name="tools-q2" data-fb=" These chatbots run in a web browser. Nothing to install."><span>It only works after you install special software.</span></label>
-            <label class="opt"><input type="radio" name="tools-q2" data-correct data-fb=" That is the workflow you will use in the next lesson."><span>You can ask for the code in plain language and copy it out.</span></label>
-            <label class="opt"><input type="radio" name="tools-q2" data-fb=" All four chatbots listed can write code."><span>Chatbots can only write text, not code.</span></label>
-          </div>
-          <button class="btn small check" type="button">Check answer</button>
-          <p class="feedback" role="status"></p>
-        </fieldset>
-      </div>
-    </section>
-
-    <nav class="lesson-nav" aria-label="Lessons">
-      <a class="glass prev" href="index.html"><span class="dir">&larr; Previous</span><span class="ttl">What is vibecoding?</span></a>
-      <a class="glass next" href="diy.html"><span class="dir">Next &rarr;</span><span class="ttl">DIY: your first webpage</span></a>
-    </nav>
   </main>
   <footer>
-    <div class="wrap">Vibecoding 101 &middot; A four-part beginner lesson. Built with vibecoding.</div>
+    <div class="wrap">Vibecoding 101</div>
   </footer>
-  <script src="app.js"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>

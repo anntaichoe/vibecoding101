@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vibecoding 101</title>
-  <meta name="description" content="A beginner lesson on vibecoding: what it is, popular tools, a step-by-step first webpage, and tips for debugging and thinking bigger.">
+  <meta name="description" content="A beginner's guide to vibecoding: popular tools and a step-by-step walkthrough for building your first webpage.">
   <meta name="color-scheme" content="light dark">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <script>
@@ -15,19 +15,18 @@
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
   <a class="skip" href="#main">Skip to main content</a>
   <header class="topbar">
     <div class="wrap">
       <div class="bar glass">
-        <a class="brand" href="index.html"><img src="favicon.svg" alt="" width="28" height="28">Vibecoding 101</a>
-        <nav aria-label="Main"><ul class="nav"><li><a href="index.html" aria-current="page">Home</a></li><li><a href="tools.html">Popular Tools</a></li><li><a href="diy.html">DIY</a></li><li><a href="tips.html">Tips</a></li></ul></nav>
+        <a class="brand" href="index.html">Vibecoding 101</a>
+        <nav aria-label="Main"><ul class="nav"><li><a href="index.html" aria-current="page">Home</a></li><li><a href="tools.html">Popular Tools</a></li><li><a href="diy.html">DIY</a></li></ul></nav>
         <button class="theme" id="themeToggle" type="button" aria-label="Switch to dark mode">
           <svg class="moon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
           <svg class="sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>
-          <span class="label">Dark</span>
         </button>
       </div>
     </div>
@@ -35,142 +34,49 @@
   <main id="main" class="wrap">
     <section class="hero" aria-labelledby="h1">
       <div>
-        <p class="eyebrow">Vibecoding 101</p>
+        <p class="eyebrow">Welcome</p>
         <h1 id="h1">Describe it. <span class="hl">Build it.</span> Share it.</h1>
-        <p class="lede">Vibecoding means building software by telling an AI what you want in plain language, then shaping the result through conversation. You bring the idea. The AI writes the code.</p>
-        <ul class="meta" aria-label="Lesson details">
-          <li>About 45 minutes</li>
-          <li>No coding experience needed</li>
-          <li>Free tools only</li>
-        </ul>
-        <div class="actions">
-          <a class="btn" href="#what">Start the lesson</a>
-          <a class="btn ghost" href="diy.html">Skip to building</a>
-        </div>
+        <p class="lede">Vibecoding means building software by telling an AI what you want in plain language, then shaping the result through conversation. No coding background needed.</p>
       </div>
       <img class="hero-art lg" src="images/mascot-laptop.webp" alt="" width="627" height="510">
     </section>
 
-    <section aria-labelledby="obj">
-      <div class="glass panel">
-        <h2 id="obj">By the end, you will be able to</h2>
-        <ol class="objectives">
-          <li><span class="n" aria-hidden="true">1</span><span><strong>Explain</strong> what vibecoding is, in your own words.</span></li>
-          <li><span class="n" aria-hidden="true">2</span><span><strong>Choose</strong> a tool that fits your goal and experience level.</span></li>
-          <li><span class="n" aria-hidden="true">3</span><span><strong>Build and publish</strong> a one-page website using a free AI chatbot and GitHub.</span></li>
-          <li><span class="n" aria-hidden="true">4</span><span><strong>Debug</strong> a problem by giving the AI the right evidence, and <strong>plan</strong> a more ambitious next project.</span></li>
-        </ol>
-      </div>
-    </section>
-
-    <section id="what" aria-labelledby="what-h">
-      <h2 id="what-h">Where the term comes from</h2>
-      <p class="note">AI researcher Andrej Karpathy named the practice in a post on X in February 2025. The post has been viewed millions of times.</p>
-      <div class="split">
-        <figure class="xpost">
-          <div class="xhead">
-            <span class="xavatar" aria-hidden="true">AK</span>
-            <div>
-              <div class="xname">Andrej Karpathy <svg viewBox="0 0 24 24" role="img" aria-label="Verified account"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.4l3 3 6-6.6" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <div class="xhandle">@karpathy</div>
-            </div>
+    <section aria-labelledby="quote-h">
+      <h2 id="quote-h" class="sr-only">Where the term comes from</h2>
+      <figure class="xpost">
+        <div class="xhead">
+          <span class="xavatar" aria-hidden="true">AK</span>
+          <div>
+            <div class="xname">Andrej Karpathy <svg viewBox="0 0 24 24" role="img" aria-label="Verified account"><path class="seal" d="M12 1.5l2.3 1.9 3-.3 1 2.8 2.7 1.3-.6 2.9 1.6 2.5-2.1 2.1.1 3-2.9.7-1.5 2.6-2.9-.8L12 22.5l-2.3-2.3-2.9.8-1.5-2.6-2.9-.7.1-3-2.1-2.1 1.6-2.5-.6-2.9 2.7-1.3 1-2.8 3 .3z"/><path d="M7.6 12.3l3 3 5.8-6.4" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <a class="xhandle" href="https://x.com/karpathy/status/1886192184808149383" target="_blank" rel="noopener">@karpathy<span class="sr-only"> (opens in a new tab)</span></a>
           </div>
-          <blockquote cite="https://x.com/karpathy/status/1886192184808149383">
-            <p>There's a new kind of coding I call "vibe coding" &hellip;</p>
-          </blockquote>
-          <p class="xtime"><time datetime="2025-02-02">1:17 PM &middot; Feb 2, 2025</time> &middot; <strong>8.2M</strong> Views</p>
-          <ul class="xstats">
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H10l-5 4v-4H4z"/></svg>1.4K<span class="sr-only"> replies</span></li>
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17V8h9M13 5l3 3-3 3M17 7v9H8M11 19l-3-3 3-3"/></svg>6.5K<span class="sr-only"> reposts</span></li>
-            <li class="like"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.2 4.2 0 0 1 12 7.6 4.2 4.2 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg>38K<span class="sr-only"> likes</span></li>
-            <li class="mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v16l-5-4-5 4z"/></svg>19K<span class="sr-only"> bookmarks</span></li>
-          </ul>
-          <figcaption>Excerpt of the opening line. <a href="https://x.com/karpathy/status/1886192184808149383" target="_blank" rel="noopener">Read the full post on X<span class="sr-only"> (opens in a new tab)</span></a>. Counts as shown in November 2026.</figcaption>
-        </figure>
-        <div class="glass card">
-          <h3>What he described, in plain words</h3>
-          <ul class="plain">
-            <li>You say what you want. The AI writes the code.</li>
-            <li>You judge the result by running it, not by reading every line.</li>
-            <li>When an error shows up, you hand it back to the AI to fix.</li>
-            <li>He saw it as a fit for quick, low-stakes projects. That caution still applies.</li>
-          </ul>
         </div>
-      </div>
+        <blockquote cite="https://x.com/karpathy/status/1886192184808149383">
+          <p>&hellip;I just see stuff, say stuff, run stuff, and copy paste stuff&hellip;</p>
+        </blockquote>
+        <figcaption>From the post that coined &ldquo;vibe coding&rdquo; &middot; Feb 2, 2025 &middot; <a href="https://x.com/karpathy/status/1886192184808149383" target="_blank" rel="noopener">Read it on X<span class="sr-only"> (opens in a new tab)</span></a></figcaption>
+      </figure>
     </section>
 
-    <section aria-labelledby="why-h">
-      <h2 id="why-h">Why it is worth your time</h2>
-      <p class="note">You do not need to become a programmer. You need to describe a problem clearly, which you already do at work.</p>
-      <div class="cols">
-        <div class="glass card"><h3>Solve your own problems</h3><p>Build the small tool you keep wishing existed: a tracker, a calculator, a sign-up page.</p></div>
-        <div class="glass card"><h3>Show, don't pitch</h3><p>A working prototype explains an idea faster than a slide deck.</p></div>
-        <div class="glass card"><h3>Know what AI can do</h3><p>Hands-on practice gives you a realistic sense of where AI helps and where it struggles.</p></div>
-      </div>
+    <section class="doors" aria-label="Pages">
+      <a class="door glass" href="tools.html">
+        <span class="num">01</span>
+        <h2>Popular Tools</h2>
+        <p>The vibecoding tools people are using right now, plus the free chatbots that can write code for you.</p>
+        <span class="go">Browse the tools &rarr;</span>
+      </a>
+      <a class="door glass" href="diy.html">
+        <span class="num">02</span>
+        <h2>DIY</h2>
+        <p>Vibecode your first webpage and put it on the internet for free with GitHub, one step at a time. Includes tips for when things break.</p>
+        <span class="go">Start building &rarr;</span>
+      </a>
     </section>
 
-    <section aria-labelledby="check-h">
-      <h2 id="check-h">Quick check</h2>
-      <p class="note">Two questions. You get feedback right away and can try again.</p>
-      <div class="quiz">
-        <fieldset class="q glass">
-          <legend><span class="qn">Question 1 of 2</span>Which statement best describes vibecoding?</legend>
-          <div class="opts">
-            <label class="opt"><input type="radio" name="home-q1" data-fb=" That is the traditional route. Vibecoding starts from a plain-language description instead."><span>Memorizing a programming language before you build anything.</span></label>
-            <label class="opt"><input type="radio" name="home-q1" data-correct data-fb=" You direct, the AI writes the code, and you steer by looking at the result."><span>Describing what you want to an AI and refining the result through conversation.</span></label>
-            <label class="opt"><input type="radio" name="home-q1" data-fb=" Vibecoding creates something new from your own description."><span>Copying a finished website from someone else.</span></label>
-          </div>
-          <button class="btn small check" type="button">Check answer</button>
-          <p class="feedback" role="status"></p>
-        </fieldset>
-        <fieldset class="q glass">
-          <legend><span class="qn">Question 2 of 2</span>In the original description, what kind of project was vibecoding suited to?</legend>
-          <div class="opts">
-            <label class="opt"><input type="radio" name="home-q2" data-correct data-fb=" It was framed as a way to build casual projects fast. Software that handles money or private data still needs expert review."><span>Quick, low-stakes projects.</span></label>
-            <label class="opt"><input type="radio" name="home-q2" data-fb=" High-stakes software needs careful review by experts. The original framing was casual projects."><span>Banking and medical systems.</span></label>
-            <label class="opt"><input type="radio" name="home-q2" data-fb=" The point is nearly the opposite: describing what you want lowers the barrier for everyone."><span>Only projects by professional engineers.</span></label>
-          </div>
-          <button class="btn small check" type="button">Check answer</button>
-          <p class="feedback" role="status"></p>
-        </fieldset>
-      </div>
-    </section>
-
-    <section aria-labelledby="path-h">
-      <h2 id="path-h">Your learning path</h2>
-      <p class="note">Four short lessons. Go in order, or jump to what you need.</p>
-      <ol class="path">
-        <li><a class="glass" href="index.html"><span class="step-n">Lesson 1</span><span class="t">What is vibecoding?</span><span class="d">Where the idea came from and what it means in practice.</span><span class="time">About 10 min</span></a></li>
-        <li><a class="glass" href="tools.html"><span class="step-n">Lesson 2</span><span class="t">Popular Tools</span><span class="d">The tools people use, and which ones suit a beginner.</span><span class="time">About 5 min</span></a></li>
-        <li><a class="glass" href="diy.html"><span class="step-n">Lesson 3</span><span class="t">DIY: your first webpage</span><span class="d">Build a real page with AI and publish it free on GitHub.</span><span class="time">About 20 min</span></a></li>
-        <li><a class="glass" href="tips.html"><span class="step-n">Lesson 4</span><span class="t">Tips: debug and think bigger</span><span class="d">Fix problems faster and aim for more useful projects.</span><span class="time">About 10 min</span></a></li>
-      </ol>
-    </section>
-
-    <section aria-labelledby="design-h">
-      <h2 id="design-h" class="sr-only">About this lesson</h2>
-      <details class="glass">
-        <summary>How this lesson is designed</summary>
-        <div class="inner">
-          <ul class="plain">
-            <li><strong>Backward design.</strong> Four measurable objectives come first, and every page maps to one of them.</li>
-            <li><strong>Chunking.</strong> Short lessons with time estimates keep the load manageable.</li>
-            <li><strong>Worked examples.</strong> Copy-ready prompts and a weak-versus-strong comparison show what good looks like.</li>
-            <li><strong>Retrieval practice.</strong> Each lesson ends with a quick check that explains why an answer is right or wrong.</li>
-            <li><strong>Adult learning.</strong> Content is tied to real tasks, self-paced, and ends in something you can use.</li>
-            <li><strong>Access for everyone.</strong> Built to WCAG 2.2 AA, with keyboard support, light and dark modes, and reduced-motion support.</li>
-          </ul>
-        </div>
-      </details>
-    </section>
-
-    <nav class="lesson-nav" aria-label="Lessons">
-      <a class="glass next" href="tools.html"><span class="dir">Next &rarr;</span><span class="ttl">Popular Tools</span></a>
-    </nav>
   </main>
   <footer>
-    <div class="wrap">Vibecoding 101 &middot; A four-part beginner lesson. Built with vibecoding.</div>
+    <div class="wrap">Vibecoding 101</div>
   </footer>
-  <script src="app.js"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>
