@@ -15,7 +15,7 @@
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
   <a class="skip" href="#main">Skip to main content</a>
@@ -93,6 +93,31 @@
     <section aria-labelledby="p2-h">
       <h2 id="p2-h">Part 2: Put it online with GitHub</h2>
       <p class="note">GitHub stores your file for free and turns it into a live website with a feature called GitHub Pages.</p>
+      <div class="glass panel concepts">
+        <h3>Core concepts</h3>
+        <h4>The basics</h4>
+        <dl>
+          <div class="concept"><dt>Git</dt><dd><p>The tracking system.</p><p class="like"><span class="like-tag">Like</span> Google Docs version history, or Track Changes.</p></dd></div>
+          <div class="concept"><dt>GitHub</dt><dd><p>An online platform where people collaborate and store the tracking system.</p><p class="like"><span class="like-tag">Like</span> Google Docs (online) versus Word (on your computer).</p></dd></div>
+          <div class="concept"><dt>Repo <span class="full">(repository)</span></dt><dd><p>A project folder that stores all the essential &ldquo;ingredients&rdquo; that make the project work.</p><pre class="tree" aria-label="Example repo: a folder named my-website containing index.html, style.css, and an images folder">my-website/
+├── index.html
+├── style.css
+└── images/</pre></dd></div>
+        </dl>
+        <h4>Saving your work</h4>
+        <dl>
+          <div class="concept"><dt>Commit</dt><dd><p>A saved snapshot of your work.</p><p class="like"><span class="like-tag">Like</span> Pressing <kbd>Cmd</kbd> / <kbd>Ctrl</kbd> + <kbd>S</kbd> in Word, except a commit doesn't overwrite the file.</p></dd></div>
+          <div class="concept"><dt>Branch</dt><dd><p>Lets you work on changes without affecting the main version of the project.</p><p class="like"><span class="like-tag">Like</span> Making a copy of a Google Doc for your own edits or highlighting. Once you're happy with the edits, you can <strong>merge</strong> them back into the main document.</p></dd></div>
+        </dl>
+        <h4>Moving your work around</h4>
+        <dl>
+          <div class="concept"><dt>Push</dt><dd><p>Sends the changes on your computer (or Codespace) to GitHub.</p></dd></div>
+          <div class="concept"><dt>Pull</dt><dd><p>Downloads the latest changes from GitHub to your computer.</p></dd></div>
+          <div class="concept"><dt>Clone</dt><dd><p>Downloads a copy of a GitHub repository onto your computer.</p></dd></div>
+          <div class="concept"><dt>Fork</dt><dd><p>Makes a copy of someone else's project in your own account.</p></dd></div>
+        </dl>
+      </div>
+      <h3 class="sub">Steps</h3>
       <ol class="steps">
         <li class="glass">
           <h3>Create a free GitHub account</h3>
@@ -190,6 +215,6 @@
   <footer>
     <div class="wrap">Vibecoding 101 &middot; Last updated by Ann T. Choe on <time datetime="2026-11-11">November 11, 2026</time>.</div>
   </footer>
-  <script src="app.js?v=4"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>
