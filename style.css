@@ -272,7 +272,7 @@ code { color: var(--text); background: var(--chip); border-radius: 6px; padding:
 .tagline { font-size: clamp(1.25rem, 3vw, 1.7rem); font-weight: 650; letter-spacing: -0.02em; margin: 10px 0 0; }
 .tagline .hl { color: var(--accent); }
 .ideas { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 40px; }
-.ideas li { border-top: 2px solid var(--accent); padding: 16px 0 18px; }
+.ideas > li { border-top: 2px solid var(--accent); padding: 16px 0 18px; }
 .ideas h3 { margin: 0 0 6px; }
 .ideas p { margin: 0; color: var(--muted); }
 .idea-n { display: block; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 6px; }
@@ -284,6 +284,17 @@ code { color: var(--text); background: var(--chip); border-radius: 6px; padding:
 .links a, .links strong { font-weight: 650; }
 .links a { display: inline-block; padding: 4px 0; }
 .links span { color: var(--muted); font-size: 0.97rem; }
+
+/* Reference tables */
+.reftable { width: 100%; border-collapse: collapse; margin-top: 30px; }
+.reftable caption { text-align: left; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); padding-bottom: 8px; border-bottom: 2px solid var(--accent); }
+.reftable th, .reftable td { text-align: left; vertical-align: top; padding: 12px 0; border-bottom: 1px solid var(--hairline); }
+.reftable th { width: 32%; padding-right: 20px; font-weight: 650; }
+.reftable th a { display: inline-block; }
+.reftable td { color: var(--muted); }
+.terms h3 { color: var(--accent); font-size: 1.35rem; }
+.terms .plain { color: var(--muted); margin-top: 4px; }
+.terms .plain li { margin-bottom: 4px; }
 
 /* Definition box */
 .define-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin: 0 0 4px; }
@@ -309,6 +320,7 @@ footer { text-align: center; margin-top: 72px; padding: 26px 0 44px; border-top:
 @media (max-width: 760px) {
   .cols.two, .cols.three, .ideas, .links, .define-cols { grid-template-columns: 1fr; }
   .links li { grid-template-columns: 1fr; gap: 0; }
+  .reftable th { width: 40%; }
   .nav { flex-wrap: wrap; }
   .nav a { padding: 0 9px; }
   .bar { flex-wrap: wrap; border-radius: 26px; padding: 8px 10px 8px 14px; }
