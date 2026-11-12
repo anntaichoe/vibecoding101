@@ -15,7 +15,7 @@
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
   <a class="skip" href="#main">Skip to main content</a>
@@ -63,7 +63,7 @@
           <h3>Ask the AI to build it</h3>
           <p>Open your chatbot and describe the page. Copy this prompt and change the words in [brackets]:</p>
           <div class="prompt">
-            <div class="prompt-head"><span class="prompt-label">Prompt</span><button class="copy" type="button" data-copy="p1" aria-label="Copy prompt">Copy</button></div>
+            <div class="prompt-head"><span class="prompt-label">Prompt</span><button class="copy" type="button" data-copy="p1" aria-label="Copy prompt"><svg class="i-copy" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="i-done" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button></div>
             <p id="p1">Build me a one-page website about [my dog Mochi]. Include [a short intro, three fun facts, and a list of her favorite things]. Make it look [playful and colorful] and work well on phones. Put everything (HTML, CSS, and JavaScript) in a single file called index.html. Do not use any outside images or libraries.</p>
           </div>
           <div class="callout"><p><span class="bulb" aria-hidden="true">&#128161;</span> <strong>Why one file?</strong> A single <code>index.html</code> is the easiest thing to publish. You only have one thing to copy.</p></div>
@@ -82,7 +82,7 @@
           <h3>Copy the final code</h3>
           <p>When you are happy, send this so you get the whole page in one piece:</p>
           <div class="prompt">
-            <div class="prompt-head"><span class="prompt-label">Prompt</span><button class="copy" type="button" data-copy="p2" aria-label="Copy prompt">Copy</button></div>
+            <div class="prompt-head"><span class="prompt-label">Prompt</span><button class="copy" type="button" data-copy="p2" aria-label="Copy prompt"><svg class="i-copy" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="i-done" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button></div>
             <p id="p2">Give me the complete, final index.html in one code block.</p>
           </div>
           <p>Use the copy button on the code block. Keep this tab open.</p>
@@ -169,7 +169,43 @@
           </ol>
         </li>
       </ol>
-      <div class="callout tip"><p><span class="bulb" aria-hidden="true">&#128161;</span> <strong>Pro tip: let the AI talk to GitHub for you.</strong> AI tools such as Claude and ChatGPT offer a GitHub connector. Once you connect your account, the AI can handle the back-and-forth with GitHub, such as reading your repo and, in some tools, saving your changes, so you do less copying and pasting. Look for &ldquo;Connectors&rdquo; in your AI tool's settings.</p></div>
+    </section>
+
+    <section aria-labelledby="p3-h">
+      <h2 id="p3-h">Part 3: Let the AI work with GitHub directly</h2>
+      <p class="note">Copying and pasting works, but there is a faster way. Connect your AI tool to GitHub, then ask for fixes in plain words. The AI reads your repo itself.</p>
+      <div class="glass panel concepts">
+        <h3>Where to find it</h3>
+        <dl>
+          <div class="concept"><dt>Claude</dt><dd><p>Called <strong>Connectors</strong>.</p></dd></div>
+          <div class="concept"><dt>ChatGPT</dt><dd><p>Called <strong>Apps</strong>. They used to be called connectors, and you may find them in the plugin directory.</p></dd></div>
+          <div class="concept"><dt>Grok</dt><dd><p>Called <strong>Connectors</strong>. Add one at grok.com/connectors.</p></dd></div>
+        </dl>
+      </div>
+      <h3 class="sub">Steps</h3>
+      <ol class="steps">
+        <li class="glass">
+          <h3>Open the connection settings in your AI tool</h3>
+          <p>Use the names in the table above. Look for GitHub in the list.</p>
+        </li>
+        <li class="glass">
+          <h3>Connect your GitHub account</h3>
+          <p>Sign in to GitHub when asked and approve the connection. If you are given a choice, share only the repo you are working on.</p>
+        </li>
+        <li class="glass">
+          <h3>Ask for the fix in plain words</h3>
+          <p>Describe the problem the same way you would in the Tips tab. Copy this prompt and change the words in [brackets]:</p>
+          <div class="prompt">
+            <div class="prompt-head"><span class="prompt-label">Prompt</span><button class="copy" type="button" data-copy="p5" aria-label="Copy prompt"><svg class="i-copy" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="i-done" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button></div>
+            <p id="p5">Look at my GitHub repo [my-first-site]. On my page, [the Submit button does nothing on my phone]. Find the cause in index.html and explain it in plain words. If you are able to save changes to the repo, fix it and tell me what you changed. If not, give me the complete corrected index.html.</p>
+          </div>
+        </li>
+        <li class="glass">
+          <h3>Check your live site</h3>
+          <p>If the AI saved the change, refresh your site after a minute. If it could only read the repo, paste the corrected file yourself using step 3 of Part 2.</p>
+        </li>
+      </ol>
+      <div class="callout tip"><p><span class="bulb" aria-hidden="true">&#128161;</span> <strong>Names and abilities change often.</strong> Some connections can only read your repo, and what you get can depend on your plan. If you cannot find it, search your AI tool's settings for &ldquo;GitHub&rdquo;.</p></div>
     </section>
 
     <section aria-labelledby="fix-h">
@@ -184,8 +220,43 @@
 
     <section aria-labelledby="help-h">
       <h2 id="help-h" class="h3">Need help debugging?</h2>
-      <p style="margin:6px 0 14px">If your page looks broken or something does not work, the Tips tab shows how to get the AI to fix it.</p>
-      <a class="btn" href="tips">Go to Tips &rarr;</a>
+      <p style="margin:10px 0 0"><a class="btn" href="tips">Go to Tips &rarr;</a></p>
+    </section>
+
+    <section aria-labelledby="check-h">
+      <h2 id="check-h">Vibecheck</h2>
+      <div class="quiz">
+        <fieldset class="q glass">
+          <legend><span class="qn">Question 1 of 3</span>What should you name the file you add to your repo?</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="diy-q1" data-fb=" It would upload, but GitHub Pages looks for index.html as the front page."><span>website.html</span></label>
+            <label class="opt"><input type="radio" name="diy-q1" data-correct data-fb=" GitHub Pages treats index.html as the front page of your site."><span>index.html</span></label>
+            <label class="opt"><input type="radio" name="diy-q1" data-fb=" Spaces and capitals cause trouble. GitHub Pages looks for index.html."><span>My First Page.html</span></label>
+          </div>
+          <button class="btn small check" type="button">Check answer</button>
+          <p class="feedback" role="status"></p>
+        </fieldset>
+        <fieldset class="q glass">
+          <legend><span class="qn">Question 2 of 3</span>What does a commit do?</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="diy-q2" data-correct data-fb=" Like saving, except every earlier version is kept in the history."><span>It saves a snapshot of your work without overwriting the earlier versions.</span></label>
+            <label class="opt"><input type="radio" name="diy-q2" data-fb=" Nothing is deleted. Earlier versions stay in the history."><span>It deletes the old version of your site.</span></label>
+            <label class="opt"><input type="radio" name="diy-q2" data-fb=" GitHub and your chatbot are separate unless you connect them, as in Part 3."><span>It sends your code to the AI.</span></label>
+          </div>
+          <button class="btn small check" type="button">Check answer</button>
+          <p class="feedback" role="status"></p>
+        </fieldset>
+        <fieldset class="q glass">
+          <legend><span class="qn">Question 3 of 3</span>Which GitHub feature turns your repo into a live website?</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="diy-q3" data-fb=" A fork makes a copy of someone else&#x27;s project in your account."><span>Fork</span></label>
+            <label class="opt"><input type="radio" name="diy-q3" data-fb=" A branch lets you work on changes without affecting the main version."><span>Branch</span></label>
+            <label class="opt"><input type="radio" name="diy-q3" data-correct data-fb=" Turn it on under Settings, then Pages, and your repo gets its own web address."><span>GitHub Pages</span></label>
+          </div>
+          <button class="btn small check" type="button">Check answer</button>
+          <p class="feedback" role="status"></p>
+        </fieldset>
+      </div>
     </section>
 
     <section aria-labelledby="next-h">
@@ -195,8 +266,8 @@
 
   </main>
   <footer>
-    <div class="wrap">Made with aloha</div>
+    <div class="wrap">made with aloha</div>
   </footer>
-  <script src="app.js?v=7"></script>
+  <script src="app.js?v=8"></script>
 </body>
 </html>

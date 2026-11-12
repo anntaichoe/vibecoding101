@@ -15,7 +15,7 @@
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
   <a class="skip" href="#main">Skip to main content</a>
@@ -35,7 +35,7 @@
     <section class="hero" aria-labelledby="h1">
       <div>
         <p class="eyebrow">Page 03</p>
-        <h1 id="h1">Tips: when it breaks, <span class="hl">show the AI</span></h1>
+        <h1 id="h1">Tips - Show it. Describe it. <span class="hl">Fix it.</span></h1>
         <p class="lede">Fixing what went wrong is called debugging. You do not have to find the cause yourself. Give the AI good evidence and let it do the work.</p>
       </div>
       <img class="hero-art md" src="images/mascot-camera.webp?v=2" alt="" width="560" height="599">
@@ -50,7 +50,7 @@
         <div class="glass card"><h3>Ask the AI to explain it</h3><p>&ldquo;Explain what went wrong in plain words.&rdquo; You learn a little every time.</p></div>
       </div>
           <div class="prompt">
-            <div class="prompt-head"><span class="prompt-label">Debug prompt</span><button class="copy" type="button" data-copy="p3" aria-label="Copy debug prompt">Copy</button></div>
+            <div class="prompt-head"><span class="prompt-label">Debug prompt</span><button class="copy" type="button" data-copy="p3" aria-label="Copy debug prompt"><svg class="i-copy" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="i-done" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button></div>
             <p id="p3">Something is not working. What I did: [clicked the Submit button on my phone]. What I expected: [a thank-you message]. What happened instead: [nothing]. I attached a screenshot and pasted my full code below. Find the cause, explain it in plain words, then give me the complete corrected index.html.</p>
           </div>
 
@@ -67,10 +67,36 @@
       </div>
     </section>
 
+    <section aria-labelledby="check-h">
+      <h2 id="check-h">Vibecheck</h2>
+      <div class="quiz">
+        <fieldset class="q glass">
+          <legend><span class="qn">Question 1 of 2</span>A button on your page does nothing. Which message gets the fastest fix?</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="tips-q1" data-fb=" The AI has to guess what is wrong. Add what you did, what you expected, and evidence."><span>&ldquo;It doesn't work.&rdquo;</span></label>
+            <label class="opt"><input type="radio" name="tips-q1" data-correct data-fb=" Evidence plus expected versus actual lets the AI go straight to the cause."><span>A screenshot, what you clicked, what you expected, and your full code.</span></label>
+            <label class="opt"><input type="radio" name="tips-q1" data-fb=" This says nothing about the problem. Describe what happened and attach evidence."><span>&ldquo;Please be more careful this time.&rdquo;</span></label>
+          </div>
+          <button class="btn small check" type="button">Check answer</button>
+          <p class="feedback" role="status"></p>
+        </fieldset>
+        <fieldset class="q glass">
+          <legend><span class="qn">Question 2 of 2</span>Your first version works. What is the most useful next move?</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="tips-q2" data-fb=" It can do far more. Testing the limits is how you find out what is possible."><span>Stop there, since AI can only build simple pages.</span></label>
+            <label class="opt"><input type="radio" name="tips-q2" data-correct data-fb=" Asking for more is where vibecoding starts saving you time."><span>Ask the AI what else it could do, or connect it to software you already use.</span></label>
+            <label class="opt"><input type="radio" name="tips-q2" data-fb=" Learning to code is valuable, but it is not required for the next step."><span>Learn a programming language before trying anything else.</span></label>
+          </div>
+          <button class="btn small check" type="button">Check answer</button>
+          <p class="feedback" role="status"></p>
+        </fieldset>
+      </div>
+    </section>
+
   </main>
   <footer>
-    <div class="wrap">Made with aloha</div>
+    <div class="wrap">made with aloha</div>
   </footer>
-  <script src="app.js?v=7"></script>
+  <script src="app.js?v=8"></script>
 </body>
 </html>

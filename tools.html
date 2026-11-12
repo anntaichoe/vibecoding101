@@ -15,7 +15,7 @@
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
   <a class="skip" href="#main">Skip to main content</a>
@@ -93,10 +93,36 @@
       </ul>
     </section>
 
+    <section aria-labelledby="check-h">
+      <h2 id="check-h">Vibecheck</h2>
+      <div class="quiz">
+        <fieldset class="q glass">
+          <legend><span class="qn">Question 1 of 2</span>You are brand new and want to start building today. Which label should you look for?</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="tools-q1" data-fb=" That tells you who makes the tool, not how easy it is to start with."><span>By Google</span></label>
+            <label class="opt"><input type="radio" name="tools-q1" data-correct data-fb=" Those tools need the least setup, so you get a first result quickly."><span>Beginner friendly</span></label>
+            <label class="opt"><input type="radio" name="tools-q1" data-fb=" That only tells you an account is needed."><span>Login required</span></label>
+          </div>
+          <button class="btn small check" type="button">Check answer</button>
+          <p class="feedback" role="status"></p>
+        </fieldset>
+        <fieldset class="q glass">
+          <legend><span class="qn">Question 2 of 2</span>When would you reach for a tool like Supabase or Appwrite?</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="tools-q2" data-correct data-fb=" Both give you a ready-made backend with a database and user sign-in."><span>When your app needs to store user data or let people sign in.</span></label>
+            <label class="opt"><input type="radio" name="tools-q2" data-fb=" That is a custom domain, which you buy from a seller such as GoDaddy."><span>When you want an address like yourname.com.</span></label>
+            <label class="opt"><input type="radio" name="tools-q2" data-fb=" A first page does not need a backend. The essentials come in when a project grows."><span>When you are building your very first page.</span></label>
+          </div>
+          <button class="btn small check" type="button">Check answer</button>
+          <p class="feedback" role="status"></p>
+        </fieldset>
+      </div>
+    </section>
+
   </main>
   <footer>
-    <div class="wrap">Made with aloha</div>
+    <div class="wrap">made with aloha</div>
   </footer>
-  <script src="app.js?v=7"></script>
+  <script src="app.js?v=8"></script>
 </body>
 </html>

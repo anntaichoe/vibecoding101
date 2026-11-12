@@ -28,11 +28,16 @@
 
   /* Copy buttons */
   document.querySelectorAll('.copy').forEach(function (btn) {
+    var label = btn.getAttribute('aria-label');
     btn.addEventListener('click', function () {
       var text = document.getElementById(btn.dataset.copy).textContent.trim();
       function done() {
-        btn.textContent = 'Copied';
-        setTimeout(function () { btn.textContent = 'Copy'; }, 1800);
+        btn.classList.add('copied');
+        btn.setAttribute('aria-label', 'Copied');
+        setTimeout(function () {
+          btn.classList.remove('copied');
+          btn.setAttribute('aria-label', label);
+        }, 1800);
       }
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(done, function () {});
