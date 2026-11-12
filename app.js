@@ -13,8 +13,8 @@
   function paint() {
     var dark = root.getAttribute('data-theme') === 'dark';
     toggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
-    toggle.querySelector('.sun').hidden = !dark;
-    toggle.querySelector('.moon').hidden = dark;
+    toggle.querySelector('.sun').toggleAttribute('hidden', !dark);
+    toggle.querySelector('.moon').toggleAttribute('hidden', dark);
   }
   if (toggle) {
     paint();
@@ -64,4 +64,25 @@
     box.addEventListener('change', apply);
     apply();
   }
+
+  /* Quizzes: one question per fieldset, immediate explanatory feedback */
+  document.querySelectorAll('.q').forEach(function (q) {
+    var btn = q.querySelector('.check');
+    var fb = q.querySelector('.feedback');
+    btn.addEventListener('click', function () {
+      var picked = q.querySelector('input:checked');
+      fb.className = 'feedback';
+      if (!picked) {
+        fb.innerHTML = '<strong>Choose an answer first.</strong>';
+        return;
+      }
+      var ok = picked.hasAttribute('data-correct');
+      if (ok) fb.classList.add('ok');
+      fb.innerHTML = '';
+      var head = document.createElement('strong');
+      head.textContent = ok ? '✓ Correct.' : '✗ Not quite. Try again.';
+      fb.appendChild(head);
+      fb.appendChild(document.createTextNode(picked.getAttribute('data-fb')));
+    });
+  });
 })();
