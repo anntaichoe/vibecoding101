@@ -349,6 +349,9 @@ details.vibe summary h2 { margin: 0; }
 details.vibe summary::before { width: 32px; height: 32px; font-size: 1.2rem; }
 details.vibe .quiz { margin-top: 14px; }
 
+.plainbox { margin-top: 8px; }
+.plainbox .concept:last-child { border-bottom: 1px solid var(--hairline); }
+
 /* Details */
 details.glass { padding: 4px 22px; }
 details summary { min-height: 48px; display: flex; align-items: center; font-weight: 650; cursor: pointer; list-style: none; gap: 10px; }

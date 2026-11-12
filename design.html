@@ -6,8 +6,8 @@
   <title>Design | Vibecoding 101</title>
   <meta name="description" content="Why design matters in the age of AI, what AI slop is, how to mock up an idea before building, and where to find inspiration.">
   <meta name="color-scheme" content="light dark">
-  <link rel="icon" type="image/png" href="favicon.png?v=3">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3">
+  <link rel="icon" type="image/png" href="favicon.png?v=4">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=4">
   <script>
     (function () {
       var t = null;
@@ -16,7 +16,7 @@
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
-  <link rel="stylesheet" href="style.css?v=16">
+  <link rel="stylesheet" href="style.css?v=17">
 </head>
 <body>
   <a class="skip" href="#main">Skip to main content</a>
@@ -40,6 +40,7 @@
         <p class="tagline">Look around. Sketch it. <span class="hl">Then build.</span></p>
         <p class="lede">Anyone can vibecode an app, so design and user experience (UX) are what set yours apart. Skip them and you get <a href="https://simonwillison.net/2024/May/8/slop/" target="_blank" rel="noopener">AI slop<span class="sr-only"> (opens in a new tab)</span></a> or, worse, a <a href="https://tech.co/news/what-is-slop-grenade" target="_blank" rel="noopener">slop grenade<span class="sr-only"> (opens in a new tab)</span></a>.</p>
       </div>
+      <img class="hero-art md" src="images/mascot-design.webp" alt="" width="720" height="685">
     </section>
 
     <section aria-labelledby="slop-h">
@@ -97,13 +98,13 @@
         </li>
         <li class="glass">
           <h3>Show the AI</h3>
-          <p>Attach a screenshot or photo of your mockup and your references, then ask it to build what it sees. Copy the prompt below and change the words in [brackets].</p>
+          <p>Attach a screenshot or photo of your mockup and your references, then ask it to build what it sees. Copy this prompt and change the words in [brackets]:</p>
+          <div class="prompt">
+            <div class="prompt-head"><span class="prompt-label">Design prompt</span><button class="copy" type="button" data-copy="p6" aria-label="Copy design prompt"><svg class="i-copy" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="i-done" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button></div>
+            <p id="p6">Build this page to match the attached mockup. Use the attached reference only for style. Colors: [navy, cream, one orange accent]. Fonts: [one for headings, one for body text]. Keep the spacing consistent and the text easy to read. Do not add sections I did not draw. Put everything in a single index.html.</p>
+          </div>
         </li>
       </ol>
-      <div class="prompt">
-        <div class="prompt-head"><span class="prompt-label">Design prompt</span><button class="copy" type="button" data-copy="p6" aria-label="Copy design prompt"><svg class="i-copy" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="i-done" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button></div>
-        <p id="p6">Build this page to match the attached mockup. Use the attached reference only for style. Colors: [navy, cream, one orange accent]. Fonts: [one for headings, one for body text]. Keep the spacing consistent and the text easy to read. Do not add sections I did not draw. Put everything in a single index.html.</p>
-      </div>
     </section>
 
     <section aria-labelledby="mocktools-h">
@@ -181,6 +182,6 @@
   <footer>
     <div class="wrap">made with aloha</div>
   </footer>
-  <script src="app.js?v=16"></script>
+  <script src="app.js?v=17"></script>
 </body>
 </html>
