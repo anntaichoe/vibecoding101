@@ -231,9 +231,11 @@ code { color: var(--text); background: var(--chip); border-radius: 6px; padding:
 .prompt-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
 .prompt-label { font-size: 0.76rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #c9c9d6; }
 .prompt p { margin: 0; font-size: 0.99rem; }
-.copy { flex: none; display: inline-grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: #cbb6ff; color: #1a1033; cursor: pointer; }
-.copy:hover { background: #e0d3ff; }
-.copy svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.copy { flex: none; display: inline-grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 10px; background: transparent; color: #ffffff; cursor: pointer; }
+.copy:hover { background: rgba(255, 255, 255, 0.14); }
+.go-link { display: inline-flex; align-items: center; min-height: 44px; font-size: 1.1rem; font-weight: 650; color: var(--accent); text-decoration: none; }
+.go-link:hover { text-decoration: underline; color: var(--accent-hover); }
+.copy svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .copy .i-done, .copy.copied .i-copy { display: none; }
 .copy.copied .i-done { display: block; }
 .prompt .copy:focus-visible { outline-color: #ffffff; }
