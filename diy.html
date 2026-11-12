@@ -15,7 +15,7 @@
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
   <a class="skip" href="#main">Skip to main content</a>
@@ -23,7 +23,7 @@
     <div class="wrap">
       <div class="bar glass">
         <a class="brand" href="./">Vibecoding 101</a>
-        <nav aria-label="Main"><ul class="nav"><li><a href="./">Home</a></li><li><a href="tools">Popular Tools</a></li><li><a href="diy" aria-current="page">DIY</a></li></ul></nav>
+        <nav aria-label="Main"><ul class="nav"><li><a href="./">Home</a></li><li><a href="tools">Tools</a></li><li><a href="diy" aria-current="page">DIY</a></li><li><a href="tips">Tips</a></li></ul></nav>
         <button class="theme" id="themeToggle" type="button" aria-label="Switch to dark mode">
           <svg class="moon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
           <svg class="sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>
@@ -66,7 +66,7 @@
             <div class="prompt-head"><span class="prompt-label">Prompt</span><button class="copy" type="button" data-copy="p1" aria-label="Copy prompt">Copy</button></div>
             <p id="p1">Build me a one-page website about [my dog Mochi]. Include [a short intro, three fun facts, and a list of her favorite things]. Make it look [playful and colorful] and work well on phones. Put everything (HTML, CSS, and JavaScript) in a single file called index.html. Do not use any outside images or libraries.</p>
           </div>
-          <div class="callout"><p><strong>Why one file?</strong> A single <code>index.html</code> is the easiest thing to publish. You only have one thing to copy.</p></div>
+          <div class="callout"><p><span class="bulb" aria-hidden="true">&#128161;</span> <strong>Why one file?</strong> A single <code>index.html</code> is the easiest thing to publish. You only have one thing to copy.</p></div>
         </li>
         <li class="glass">
           <h3>Look at it and ask for changes</h3>
@@ -122,7 +122,7 @@
         <li class="glass">
           <h3>Create a free GitHub account</h3>
           <p>Go to <a href="https://github.com/signup" target="_blank" rel="noopener">github.com/signup<span class="sr-only"> (opens in a new tab)</span></a>. Enter your email, a password, and a username, then verify your email.</p>
-          <div class="callout"><p><strong>Choose your username with care.</strong> It becomes part of your website's address.</p></div>
+          <div class="callout"><p><span class="bulb" aria-hidden="true">&#128161;</span> <strong>Choose your username with care.</strong> It becomes part of your website's address.</p></div>
         </li>
         <li class="glass">
           <h3>Create a repository</h3>
@@ -169,7 +169,7 @@
           </ol>
         </li>
       </ol>
-      <div class="callout tip"><p><strong>Pro tip: let the AI talk to GitHub for you.</strong> AI tools such as Claude and ChatGPT offer a GitHub connector. Once you connect your account, the AI can handle the back-and-forth with GitHub, such as reading your repo and, in some tools, saving your changes, so you do less copying and pasting. Look for &ldquo;Connectors&rdquo; in your AI tool's settings.</p></div>
+      <div class="callout tip"><p><span class="bulb" aria-hidden="true">&#128161;</span> <strong>Pro tip: let the AI talk to GitHub for you.</strong> AI tools such as Claude and ChatGPT offer a GitHub connector. Once you connect your account, the AI can handle the back-and-forth with GitHub, such as reading your repo and, in some tools, saving your changes, so you do less copying and pasting. Look for &ldquo;Connectors&rdquo; in your AI tool's settings.</p></div>
     </section>
 
     <section aria-labelledby="fix-h">
@@ -178,38 +178,14 @@
         <details class="glass"><summary>My link shows a &ldquo;404&rdquo; page</summary><div class="inner"><p>Wait a few minutes and refresh. If it still fails, check that the file is named exactly <code>index.html</code>, that it sits at the top level of the repo (not inside a folder), and that Pages is set to the <code>main</code> branch.</p></div></details>
         <details class="glass"><summary>Pages is not working in Settings</summary><div class="inner"><p>On a free account the repo must be Public. Go to Settings, scroll to the bottom, and change the visibility to Public.</p></div></details>
         <details class="glass"><summary>My changes are not showing up</summary><div class="inner"><p>Give it a minute, then do a hard refresh: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> on Windows or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> on Mac.</p></div></details>
-        <details class="glass"><summary>The page looks broken or a button does nothing</summary><div class="inner"><p>See the tips below. Tell the AI exactly what you see and what you expected, then replace your file with the corrected code.</p></div></details>
+        <details class="glass"><summary>The page looks broken or a button does nothing</summary><div class="inner"><p>See the <a href="tips">Tips tab</a>. Tell the AI exactly what you see and what you expected, then replace your file with the corrected code.</p></div></details>
       </div>
     </section>
 
-    <section id="tips" aria-labelledby="tips-h">
-      <div class="tips-head">
-        <div>
-          <p class="eyebrow">Tips</p>
-          <h2 id="tips-h">When it breaks, show the AI</h2>
-          <p class="note">Fixing what went wrong is called debugging. You do not have to find the cause yourself. Give the AI good evidence and let it do the work.</p>
-        </div>
-        <img class="hero-art md" src="images/mascot-camera.webp?v=2" alt="" width="560" height="599">
-      </div>
-      <div class="cols two">
-        <div class="glass card"><h3>Take a screenshot</h3><p>Paste it straight into the chat. Windows: <kbd>Win</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>. Mac: <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>4</kbd>.</p></div>
-        <div class="glass card"><h3>Copy the exact error</h3><p>If you see an error message, paste all of it. Do not retype or summarize it.</p></div>
-        <div class="glass card"><h3>Ask the AI to fix it</h3><p>Say what you did, what you expected, and what happened. Ask for the complete corrected file.</p></div>
-        <div class="glass card"><h3>Ask the AI to explain it</h3><p>&ldquo;Explain what went wrong in plain words.&rdquo; You learn a little every time.</p></div>
-      </div>
-          <div class="prompt">
-            <div class="prompt-head"><span class="prompt-label">Debug prompt</span><button class="copy" type="button" data-copy="p3" aria-label="Copy debug prompt">Copy</button></div>
-            <p id="p3">Something is not working. What I did: [clicked the Submit button on my phone]. What I expected: [a thank-you message]. What happened instead: [nothing]. I attached a screenshot and pasted my full code below. Find the cause, explain it in plain words, then give me the complete corrected index.html.</p>
-          </div>
-
-      <h3 class="sub">Be more ambitious</h3>
-      <p class="note">Most people ask AI for too little. Asking costs nothing, and the worst outcome is that you learn where the limit is.</p>
-      <div class="cols two">
-        <div class="glass card"><h3>Think creatively</h3><p>Ask &ldquo;What else could this do?&rdquo; and let the AI suggest ideas you would not have thought of.</p></div>
-        <div class="glass card"><h3>Connect your spreadsheet</h3><p>Paste a few sample rows and ask for a page that charts or searches them.</p></div>
-        <div class="glass card"><h3>Use software you already have</h3><p>Name the tools in your day, such as email or a calendar, and ask what could be built around them.</p></div>
-        <div class="glass card"><h3>Try it and test its limits</h3><p>Ask for the ambitious version first. If it fails, scale back one step.</p></div>
-      </div>
+    <section aria-labelledby="help-h">
+      <h2 id="help-h" class="h3">Need help debugging?</h2>
+      <p style="margin:6px 0 14px">If your page looks broken or something does not work, the Tips tab shows how to get the AI to fix it.</p>
+      <a class="btn" href="tips">Go to Tips &rarr;</a>
     </section>
 
     <section aria-labelledby="next-h">
@@ -219,8 +195,8 @@
 
   </main>
   <footer>
-    <div class="wrap">Vibecoding 101</div>
+    <div class="wrap">Made with aloha</div>
   </footer>
-  <script src="app.js?v=6"></script>
+  <script src="app.js?v=7"></script>
 </body>
 </html>

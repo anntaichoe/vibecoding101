@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Popular Tools | Vibecoding 101</title>
+  <title>Tools | Vibecoding 101</title>
   <meta name="description" content="Popular vibecoding tools and frontier AI models you can use to build apps and webpages.">
   <meta name="color-scheme" content="light dark">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -15,7 +15,7 @@
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
   <a class="skip" href="#main">Skip to main content</a>
@@ -23,7 +23,7 @@
     <div class="wrap">
       <div class="bar glass">
         <a class="brand" href="./">Vibecoding 101</a>
-        <nav aria-label="Main"><ul class="nav"><li><a href="./">Home</a></li><li><a href="tools" aria-current="page">Popular Tools</a></li><li><a href="diy">DIY</a></li></ul></nav>
+        <nav aria-label="Main"><ul class="nav"><li><a href="./">Home</a></li><li><a href="tools" aria-current="page">Tools</a></li><li><a href="diy">DIY</a></li><li><a href="tips">Tips</a></li></ul></nav>
         <button class="theme" id="themeToggle" type="button" aria-label="Switch to dark mode">
           <svg class="moon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
           <svg class="sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>
@@ -35,7 +35,7 @@
     <section class="hero" aria-labelledby="h1">
       <div>
         <p class="eyebrow">Page 01</p>
-        <h1 id="h1">Popular <span class="hl">Tools</span></h1>
+        <h1 id="h1"><span class="hl">Tools</span></h1>
         <p class="lede">Two ways to vibecode: tools made for building apps, and the everyday AI chatbots that can write code too.</p>
       </div>
       <img class="hero-art sm" src="images/mascot-phone.webp?v=2" alt="" width="520" height="616">
@@ -49,7 +49,7 @@
         <p class="count" id="toolCount" role="status">Showing 17 of 17 tools</p>
       </div>
       <ul class="grid" id="toolGrid">
-        <li><a class="tool glass" href="https://replit.com/" target="_blank" rel="noopener"><span class="name">Replit<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">replit.com</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li data-easy><a class="tool glass" href="https://replit.com/" target="_blank" rel="noopener"><span class="name">Replit<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">replit.com</span><span class="tags"><span class="tag easy">Beginner friendly</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
         <li><a class="tool glass" href="https://cursor.com/en" target="_blank" rel="noopener"><span class="name">Cursor<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">cursor.com/en</span><span class="sr-only"> (opens in a new tab)</span></a></li>
         <li><a class="tool glass" href="https://github.com/features/copilot" target="_blank" rel="noopener"><span class="name">GitHub Copilot<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">github.com/features/copilot</span><span class="sr-only"> (opens in a new tab)</span></a></li>
         <li><a class="tool glass" href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener"><span class="name">Claude Code<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">code.claude.com/docs/en/overview</span><span class="sr-only"> (opens in a new tab)</span></a></li>
@@ -61,18 +61,18 @@
         <li data-easy><a class="tool glass" href="https://v0.app/" target="_blank" rel="noopener"><span class="name">v0<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">v0.app</span><span class="tags"><span class="tag easy">Beginner friendly</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
         <li data-easy><a class="tool glass" href="https://firebase.google.com/" target="_blank" rel="noopener"><span class="name">Firebase<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">firebase.google.com</span><span class="tags"><span class="tag google">By Google</span><span class="tag easy">Beginner friendly</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
         <li><a class="tool glass" href="https://antigravity.google/" target="_blank" rel="noopener"><span class="name">Antigravity<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">antigravity.google</span><span class="tags"><span class="tag google">By Google</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
-        <li><a class="tool glass" href="https://base44.com/" target="_blank" rel="noopener"><span class="name">Base44<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">base44.com</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li data-easy><a class="tool glass" href="https://base44.com/" target="_blank" rel="noopener"><span class="name">Base44<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">base44.com</span><span class="tags"><span class="tag easy">Beginner friendly</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
         <li><a class="tool glass" href="https://www.genspark.ai/" target="_blank" rel="noopener"><span class="name">Genspark<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">www.genspark.ai</span><span class="sr-only"> (opens in a new tab)</span></a></li>
         <li><a class="tool glass" href="https://manus.im/app" target="_blank" rel="noopener"><span class="name">Manus AI<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">manus.im/app</span><span class="sr-only"> (opens in a new tab)</span></a></li>
         <li><a class="tool glass" href="https://jules.google/" target="_blank" rel="noopener"><span class="name">Jules<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">jules.google</span><span class="sr-only"> (opens in a new tab)</span></a></li>
-        <li><a class="tool glass" href="https://tesana.ai/en" target="_blank" rel="noopener"><span class="name">Tesana<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">tesana.ai/en</span><span class="tags"><span class="tag special">For building games</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li data-easy><a class="tool glass" href="https://tesana.ai/en" target="_blank" rel="noopener"><span class="name">Tesana<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">tesana.ai/en</span><span class="tags"><span class="tag special">For building games</span><span class="tag easy">Beginner friendly</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
       </ul>
       <p class="source">Source: <a href="https://hawaiiai.org/vibe-coding/" target="_blank" rel="noopener">hawaiiai.org/vibe-coding<span class="sr-only"> (opens in a new tab)</span></a></p>
     </section>
 
     <section aria-labelledby="models-h">
       <h2 id="models-h">Vibecoding using frontier models</h2>
-      <p class="note">You can also vibecode in a regular AI chatbot. Ask for the code, then copy it out.</p>
+      <p class="note">You can also vibecode in a regular AI chatbot. Ask for the code, then copy it out. Or connect the chatbot to essential tools such as GitHub and Vercel, and ask the AI to make the fix directly.</p>
       <ul class="grid wide">
         <li><a class="tool glass" href="https://chat.openai.com" target="_blank" rel="noopener"><span class="name">ChatGPT<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">chat.openai.com</span><span class="desc">Good at coding, image generation, searching.</span><span class="tags"><span class="tag ">By OpenAI</span><span class="tag easy">Free</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
         <li><a class="tool glass" href="https://claude.ai/chats" target="_blank" rel="noopener"><span class="name">Claude<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">claude.ai</span><span class="desc">Best at coding.</span><span class="tags"><span class="tag ">By Anthropic</span><span class="tag easy">Free</span><span class="tag special">Login required</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
@@ -81,10 +81,22 @@
       </ul>
     </section>
 
+    <section aria-labelledby="ess-h">
+      <h2 id="ess-h">Essentials for more advanced vibecoding</h2>
+      <p class="note">You do not need these for your first page. They come in when a project grows, for example when you want a custom domain or need to store user data.</p>
+      <ul class="grid wide">
+        <li><a class="tool glass" href="https://github.com/" target="_blank" rel="noopener"><span class="name">GitHub<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">github.com</span><span class="desc">Stores your code and its history, and can host simple sites for free.</span><span class="tags"><span class="tag special">Code storage</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a class="tool glass" href="https://vercel.com/" target="_blank" rel="noopener"><span class="name">Vercel<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">vercel.com</span><span class="desc">Publishes web apps to the internet, usually straight from a GitHub repo.</span><span class="tags"><span class="tag special">Hosting</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a class="tool glass" href="https://supabase.com/" target="_blank" rel="noopener"><span class="name">Supabase<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">supabase.com</span><span class="desc">A ready-made backend: a database, user sign-in, and file storage.</span><span class="tags"><span class="tag special">User database</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a class="tool glass" href="https://appwrite.io/" target="_blank" rel="noopener"><span class="name">Appwrite<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">appwrite.io</span><span class="desc">An open-source backend with a database, user sign-in, and file storage. An alternative to Supabase.</span><span class="tags"><span class="tag special">User database</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a class="tool glass" href="https://www.godaddy.com/" target="_blank" rel="noopener"><span class="name">GoDaddy<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">www.godaddy.com</span><span class="desc">Sells domain names, for when you want an address like yourname.com.</span><span class="tags"><span class="tag special">Custom domain</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
+      </ul>
+    </section>
+
   </main>
   <footer>
-    <div class="wrap">Vibecoding 101</div>
+    <div class="wrap">Made with aloha</div>
   </footer>
-  <script src="app.js?v=6"></script>
+  <script src="app.js?v=7"></script>
 </body>
 </html>

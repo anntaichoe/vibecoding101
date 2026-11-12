@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tips | Vibecoding 101</title>
+  <meta name="description" content="How to debug with AI using screenshots and clear evidence, and how to be more ambitious with what you build.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('vc101-theme'); } catch (e) {}
+      if (!t) t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css?v=7">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="bar glass">
+        <a class="brand" href="./">Vibecoding 101</a>
+        <nav aria-label="Main"><ul class="nav"><li><a href="./">Home</a></li><li><a href="tools">Tools</a></li><li><a href="diy">DIY</a></li><li><a href="tips" aria-current="page">Tips</a></li></ul></nav>
+        <button class="theme" id="themeToggle" type="button" aria-label="Switch to dark mode">
+          <svg class="moon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main id="main" class="wrap">
+    <section class="hero" aria-labelledby="h1">
+      <div>
+        <p class="eyebrow">Page 03</p>
+        <h1 id="h1">Tips: when it breaks, <span class="hl">show the AI</span></h1>
+        <p class="lede">Fixing what went wrong is called debugging. You do not have to find the cause yourself. Give the AI good evidence and let it do the work.</p>
+      </div>
+      <img class="hero-art md" src="images/mascot-camera.webp?v=2" alt="" width="560" height="599">
+    </section>
+
+    <section aria-labelledby="debug-h">
+      <h2 id="debug-h">How to debug</h2>
+      <div class="cols two">
+        <div class="glass card"><h3>Take a screenshot</h3><p>Paste it straight into the chat. Windows: <kbd>Win</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>. Mac: <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>4</kbd>.</p></div>
+        <div class="glass card"><h3>Copy the exact error</h3><p>If you see an error message, paste all of it. Do not retype or summarize it.</p></div>
+        <div class="glass card"><h3>Ask the AI to fix it</h3><p>Say what you did, what you expected, and what happened. Ask for the complete corrected file.</p></div>
+        <div class="glass card"><h3>Ask the AI to explain it</h3><p>&ldquo;Explain what went wrong in plain words.&rdquo; You learn a little every time.</p></div>
+      </div>
+          <div class="prompt">
+            <div class="prompt-head"><span class="prompt-label">Debug prompt</span><button class="copy" type="button" data-copy="p3" aria-label="Copy debug prompt">Copy</button></div>
+            <p id="p3">Something is not working. What I did: [clicked the Submit button on my phone]. What I expected: [a thank-you message]. What happened instead: [nothing]. I attached a screenshot and pasted my full code below. Find the cause, explain it in plain words, then give me the complete corrected index.html.</p>
+          </div>
+
+      </section>
+
+    <section aria-labelledby="big-h">
+      <h2 id="big-h">Be more ambitious</h2>
+      <p class="note">Most people ask AI for too little. Asking costs nothing, and the worst outcome is that you learn where the limit is.</p>
+      <div class="cols two">
+        <div class="glass card"><h3>Think creatively</h3><p>Ask &ldquo;What else could this do?&rdquo; and let the AI suggest ideas you would not have thought of.</p></div>
+        <div class="glass card"><h3>Connect your spreadsheet</h3><p>Paste a few sample rows and ask for a page that charts or searches them.</p></div>
+        <div class="glass card"><h3>Use software you already have</h3><p>Name the tools in your day, such as email or a calendar, and ask what could be built around them.</p></div>
+        <div class="glass card"><h3>Try it and test its limits</h3><p>Ask for the ambitious version first. If it fails, scale back one step.</p></div>
+      </div>
+    </section>
+
+  </main>
+  <footer>
+    <div class="wrap">Made with aloha</div>
+  </footer>
+  <script src="app.js?v=7"></script>
+</body>
+</html>
