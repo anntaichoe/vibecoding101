@@ -66,6 +66,105 @@
     });
   }
 
+  /* Core concepts: three sequential flashcard sets, with a list view */
+  var cc = document.getElementById('concepts');
+  if (cc) {
+    var list = cc.querySelector('.cc-list');
+    var sets = [];
+    list.querySelectorAll('h4').forEach(function (h) {
+      var dl = h.nextElementSibling;
+      var cards = [];
+      dl.querySelectorAll('.concept').forEach(function (row) {
+        var dd = row.querySelector('dd');
+        var like = dd.querySelector('.like');
+        var tree = dd.querySelector('.tree');
+        cards.push({
+          term: row.querySelector('dt').innerHTML,
+          def: dd.querySelector('p').innerHTML,
+          like: like ? like.innerHTML : '',
+          tree: tree ? tree.outerHTML : ''
+        });
+      });
+      sets.push({ name: h.textContent, cards: cards });
+    });
+
+    var h3 = cc.querySelector('h3');
+    var head = document.createElement('div');
+    head.className = 'cc-head';
+    h3.parentNode.insertBefore(head, h3);
+    head.appendChild(h3);
+    var toggle = document.createElement('div');
+    toggle.className = 'cc-toggle';
+    toggle.setAttribute('role', 'group');
+    toggle.setAttribute('aria-label', 'View');
+    toggle.innerHTML = '<button type="button" data-view="cards" aria-pressed="true">Flashcards</button><button type="button" data-view="list" aria-pressed="false">List view</button>';
+    head.appendChild(toggle);
+
+    var chevL = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>';
+    var chevR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>';
+    var view = document.createElement('div');
+    view.className = 'cc-cards';
+    view.innerHTML =
+      '<ol class="cc-flow">' + sets.map(function (s, i) {
+        return '<li><button type="button" class="cc-set" data-set="' + i + '" aria-pressed="false"><span class="k">Set ' + (i + 1) + '</span><span class="t">' + s.name + '</span><span class="c">' + s.cards.length + ' cards</span></button></li>';
+      }).join('') + '</ol>' +
+      '<div class="flashcard" role="button" tabindex="0">' +
+        '<div class="fc-inner">' +
+          '<div class="fc-face fc-front"><p class="fc-label">Term</p><p class="fc-term"></p><p class="fc-hint">Click to flip</p></div>' +
+          '<div class="fc-face fc-back" aria-hidden="true"><p class="fc-label">Definition</p><p class="fc-def"></p><p class="like"></p><div class="fc-tree"></div><p class="fc-hint">Click to see the term</p></div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="fc-nav"><button type="button" class="fc-btn" data-step="-1" aria-label="Previous card">' + chevL + '</button><p class="fc-count" role="status"></p><button type="button" class="fc-btn" data-step="1" aria-label="Next card">' + chevR + '</button></div>';
+    cc.insertBefore(view, list);
+    list.hidden = true;
+
+    var card = view.querySelector('.flashcard');
+    var front = view.querySelector('.fc-front');
+    var back = view.querySelector('.fc-back');
+    var si = 0, ci = 0, flipped = false;
+    var draw = function () {
+      var c = sets[si].cards[ci];
+      view.querySelectorAll('.cc-set').forEach(function (b, i) { b.setAttribute('aria-pressed', i === si ? 'true' : 'false'); });
+      front.querySelector('.fc-term').innerHTML = c.term;
+      back.querySelector('.fc-def').innerHTML = c.def;
+      var like = back.querySelector('.like');
+      like.innerHTML = c.like;
+      like.hidden = !c.like;
+      back.querySelector('.fc-tree').innerHTML = c.tree;
+      card.classList.toggle('flipped', flipped);
+      front.setAttribute('aria-hidden', flipped ? 'true' : 'false');
+      back.setAttribute('aria-hidden', flipped ? 'false' : 'true');
+      view.querySelector('.fc-count').textContent = 'Card ' + (ci + 1) + ' of ' + sets[si].cards.length + ' \u00b7 ' + sets[si].name + (flipped ? ' \u00b7 definition' : '');
+    };
+    var flip = function () { flipped = !flipped; draw(); };
+    card.addEventListener('click', flip);
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); }
+    });
+    view.querySelectorAll('.cc-set').forEach(function (b) {
+      b.addEventListener('click', function () { si = +b.dataset.set; ci = 0; flipped = false; draw(); });
+    });
+    view.querySelectorAll('.fc-btn').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var step = +b.dataset.step;
+        ci += step;
+        if (ci >= sets[si].cards.length) { si = (si + 1) % sets.length; ci = 0; }
+        if (ci < 0) { si = (si - 1 + sets.length) % sets.length; ci = sets[si].cards.length - 1; }
+        flipped = false;
+        draw();
+      });
+    });
+    toggle.querySelectorAll('button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var showList = b.dataset.view === 'list';
+        list.hidden = !showList;
+        view.hidden = showList;
+        toggle.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      });
+    });
+    draw();
+  }
+
   /* Copy buttons */
   document.querySelectorAll('.copy').forEach(function (btn) {
     var label = btn.getAttribute('aria-label');
