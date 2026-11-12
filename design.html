@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design | Vibecoding 101</title>
+  <meta name="description" content="Why design matters in the age of AI, what AI slop is, how to mock up an idea before building, and where to find inspiration.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" type="image/png" href="favicon.png?v=3">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('vc101-theme'); } catch (e) {}
+      if (!t) t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css?v=11">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="bar glass">
+        <a class="brand" href="./">Vibecoding 101</a>
+        <nav aria-label="Main"><ul class="nav"><li><a href="./">Home</a></li><li><a href="tools">Tools</a></li><li><a href="diy">DIY</a></li><li><a href="tips">Tips</a></li><li><a href="design" aria-current="page">Design</a></li></ul></nav>
+        <button class="theme" id="themeToggle" type="button" aria-label="Switch to dark mode">
+          <svg class="moon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main id="main" class="wrap">
+    <section class="hero" aria-labelledby="h1">
+      <div>
+        <p class="eyebrow">Page 04</p>
+        <h1 id="h1">Design</h1>
+        <p class="tagline">Look around. Sketch it. <span class="hl">Then build.</span></p>
+        <p class="lede">AI can build almost anything you describe. What it cannot do is decide what is worth building or how it should feel. That part is yours.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="why-h">
+      <h2 id="why-h">Why design matters more now</h2>
+      <ul class="ideas">
+        <li><div><h3>Building is no longer the hard part</h3><p>When anyone can produce a working page in minutes, the difference is in the choices: what to include, what to leave out, and how it looks.</p></div></li>
+        <li><div><h3>AI defaults to average</h3><p>Without direction, AI gives you the most common version of everything. That is why so many AI-made pages look alike.</p></div></li>
+        <li><div><h3>People judge in seconds</h3><p>Visitors decide whether to trust a page almost immediately. Clear, careful design earns that trust.</p></div></li>
+        <li><div><h3>Your taste is the input</h3><p>The more clearly you can show what you want, the better the result. A reference or a sketch beats a long description.</p></div></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="slop-h">
+      <aside class="glass panel define" aria-labelledby="slop-h">
+        <p class="define-label">Definition</p>
+        <h2 id="slop-h">AI slop</h2>
+        <p>Low-effort AI-generated content that is produced quickly and published without much human thought, taste or editing. You can usually tell at a glance.</p>
+        <div class="define-cols">
+          <div>
+            <h3>In writing</h3>
+            <ul class="plain">
+              <li>Filler openers such as &ldquo;In today's fast-paced world&rdquo;</li>
+              <li>Overused words such as &ldquo;delve&rdquo; and &ldquo;seamless&rdquo;</li>
+              <li>Everything listed in threes</li>
+              <li>Many words, very little said</li>
+            </ul>
+          </div>
+          <div>
+            <h3>In design</h3>
+            <ul class="plain">
+              <li>The same purple-to-blue gradient on everything</li>
+              <li>Every piece of content inside a card</li>
+              <li>Emoji used as icons in every heading</li>
+              <li>Generic headlines and stock-looking AI images</li>
+              <li>Uneven spacing and text that is hard to read</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section aria-labelledby="mock-h">
+      <h2 id="mock-h">Mock it up before you ask AI to build</h2>
+      <p class="note">A mockup is a rough picture of what you want. It takes ten minutes and saves an hour of back-and-forth, because the AI can see your intent.</p>
+      <ol class="ideas numbered">
+        <li><span class="idea-n" aria-hidden="true">01</span><div><h3>Collect references</h3><p>Find two or three pages you like from the inspiration sites below. Note what you like about each: the colors, the fonts, the layout.</p></div></li>
+        <li><span class="idea-n" aria-hidden="true">02</span><div><h3>Sketch the layout</h3><p>Draw boxes for the header, the main content and the buttons. Pen and paper is enough.</p></div></li>
+        <li><span class="idea-n" aria-hidden="true">03</span><div><h3>Choose a few colors and fonts</h3><p>Two or three colors and one or two fonts. Fewer choices look more deliberate.</p></div></li>
+        <li><span class="idea-n" aria-hidden="true">04</span><div><h3>Show the AI</h3><p>Attach a screenshot or photo of your mockup and your references, then ask it to build what it sees.</p></div></li>
+      </ol>
+          <div class="prompt">
+            <div class="prompt-head"><span class="prompt-label">Design prompt</span><button class="copy" type="button" data-copy="p6" aria-label="Copy design prompt"><svg class="i-copy" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="i-done" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button></div>
+            <p id="p6">Build this page to match the attached mockup. Use the attached reference only for style. Colors: [navy, cream, one orange accent]. Fonts: [one for headings, one for body text]. Keep the spacing consistent and the text easy to read. Do not add sections I did not draw. Put everything in a single index.html.</p>
+          </div>
+
+      <h3 class="sub">Tools for mocking up</h3>
+      <ul class="links">
+        <li><a href="https://www.figma.com/" target="_blank" rel="noopener">Figma<span class="sr-only"> (opens in a new tab)</span></a><span>The standard design tool. Draw screens and link them into a clickable prototype.</span></li>
+        <li><a href="https://www.canva.com/" target="_blank" rel="noopener">Canva<span class="sr-only"> (opens in a new tab)</span></a><span>Drag-and-drop layouts. The easiest place to start if you are new to design.</span></li>
+        <li><a href="https://paper.design/" target="_blank" rel="noopener">Paper<span class="sr-only"> (opens in a new tab)</span></a><span>A design canvas, also listed under Tools.</span></li>
+        <li><strong>Slides or pen and paper</strong><span>A slide, a whiteboard photo or a napkin sketch works too.</span></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="insp-h">
+      <h2 id="insp-h">Where to find inspiration</h2>
+      <p class="note">Each link opens in a new tab. Browse, screenshot what you like, and bring it to your AI tool.</p>
+      <h3 class="group">UX and UI design</h3>
+      <ul class="links">
+        <li><a href="https://dribbble.com/" target="_blank" rel="noopener">Dribbble<span class="sr-only"> (opens in a new tab)</span></a><span>Designers share interface, branding and illustration work.</span></li>
+        <li><a href="https://www.siteinspire.com/" target="_blank" rel="noopener">Siteinspire<span class="sr-only"> (opens in a new tab)</span></a><span>A curated showcase of well-made websites.</span></li>
+        <li><a href="https://www.awwwards.com/" target="_blank" rel="noopener">Awwwards<span class="sr-only"> (opens in a new tab)</span></a><span>Award-winning websites, judged by designers.</span></li>
+        <li><a href="https://land-book.com/" target="_blank" rel="noopener">Land-book<span class="sr-only"> (opens in a new tab)</span></a><span>A gallery of landing pages.</span></li>
+        <li><a href="https://httpster.net/" target="_blank" rel="noopener">Httpster<span class="sr-only"> (opens in a new tab)</span></a><span>A hand-picked gallery of websites.</span></li>
+        <li><a href="https://abduzeedo.com/" target="_blank" rel="noopener">Abduzeedo<span class="sr-only"> (opens in a new tab)</span></a><span>A design blog covering many styles and fields.</span></li>
+        <li><a href="https://www.designspiration.com/" target="_blank" rel="noopener">Designspiration<span class="sr-only"> (opens in a new tab)</span></a><span>Searchable design inspiration, including by color.</span></li>
+        <li><a href="https://www.cssdesignawards.com/" target="_blank" rel="noopener">CSS Design Awards<span class="sr-only"> (opens in a new tab)</span></a><span>More award-winning websites to study.</span></li>
+        <li><a href="https://collectui.com/" target="_blank" rel="noopener">Collect UI<span class="sr-only"> (opens in a new tab)</span></a><span>Interface examples sorted by element, such as buttons and forms.</span></li>
+        <li><a href="https://www.nngroup.com/articles/" target="_blank" rel="noopener">NN/g<span class="sr-only"> (opens in a new tab)</span></a><span>Research-based articles on what makes designs usable.</span></li>
+        <li><a href="https://ui.shadcn.com/docs/components" target="_blank" rel="noopener">shadcn/ui<span class="sr-only"> (opens in a new tab)</span></a><span>Ready-made interface components you can ask AI to use.</span></li>
+      </ul>
+      <h3 class="group">Fonts and icons</h3>
+      <ul class="links">
+        <li><a href="https://fontawesome.com/" target="_blank" rel="noopener">Font Awesome<span class="sr-only"> (opens in a new tab)</span></a><span>A large icon library.</span></li>
+        <li><a href="https://icons.getbootstrap.com/" target="_blank" rel="noopener">Bootstrap Icons<span class="sr-only"> (opens in a new tab)</span></a><span>Free, open-source icons.</span></li>
+        <li><a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts<span class="sr-only"> (opens in a new tab)</span></a><span>Free fonts for any project.</span></li>
+      </ul>
+      <h3 class="group">Accessibility</h3>
+      <ul class="links">
+        <li><a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener">WebAIM Contrast Checker<span class="sr-only"> (opens in a new tab)</span></a><span>Check that your text color is readable against its background.</span></li>
+      </ul>
+      <h3 class="group">Animations and sound effects</h3>
+      <ul class="links">
+        <li><a href="https://lottiefiles.com/" target="_blank" rel="noopener">LottieFiles<span class="sr-only"> (opens in a new tab)</span></a><span>Lightweight animations you can drop into a page.</span></li>
+        <li><a href="https://www.epidemicsound.com/" target="_blank" rel="noopener">Epidemic Sound<span class="sr-only"> (opens in a new tab)</span></a><span>Music and sound effects.</span></li>
+      </ul>
+    </section>
+
+  </main>
+  <footer>
+    <div class="wrap">made with aloha</div>
+  </footer>
+  <script src="app.js?v=11"></script>
+</body>
+</html>
