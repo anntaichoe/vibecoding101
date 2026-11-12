@@ -16,7 +16,7 @@
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
-  <link rel="stylesheet" href="style.css?v=19">
+  <link rel="stylesheet" href="style.css?v=20">
 </head>
 <body>
   <a class="skip" href="#main">Skip to main content</a>
@@ -24,7 +24,10 @@
     <div class="wrap">
       <div class="bar glass">
         <a class="brand" href="./">Vibecoding 101</a>
-        <nav aria-label="Main"><ul class="nav"><li><a href="./">Home</a></li><li><a href="tools" aria-current="page">Tools</a></li><li><a href="diy">DIY</a></li><li><a href="tips">Tips</a></li><li><a href="design">Design</a></li></ul></nav>
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mainNav">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <nav aria-label="Main" id="mainNav"><ul class="nav"><li><a href="./">Home</a></li><li><a href="tools" aria-current="page">Tools</a></li><li><a href="diy">DIY</a></li><li><a href="tips">Tips</a></li><li><a href="design">Design</a></li></ul></nav>
         <button class="theme" id="themeToggle" type="button" aria-label="Switch to dark mode">
           <svg class="moon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
           <svg class="sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>
@@ -124,6 +127,6 @@
   <footer>
     <div class="wrap">made with aloha</div>
   </footer>
-  <script src="app.js?v=19"></script>
+  <script src="app.js?v=20"></script>
 </body>
 </html>
