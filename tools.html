@@ -4,197 +4,130 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Popular Tools | Vibecoding 101</title>
-  <meta name="description" content="Popular vibecoding tools and frontier AI models you can use to build apps and webpages.">
+  <meta name="description" content="Popular vibecoding tools and frontier AI models, with guidance on choosing one as a beginner.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('vc101-theme'); } catch (e) {}
+      if (!t) t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to main content</a>
   <header class="topbar">
     <div class="wrap">
-      <a class="brand" href="index.html">Vibecoding <span>101</span></a>
-      <nav class="nav" aria-label="Main">
-        <a href="index.html">Home</a>
-        <a href="tools.html" aria-current="page">Popular Tools</a>
-        <a href="diy.html">DIY</a>
-      </nav>
+      <div class="bar glass">
+        <a class="brand" href="index.html"><img src="favicon.svg" alt="" width="28" height="28">Vibecoding 101</a>
+        <nav aria-label="Main"><ul class="nav"><li><a href="index.html">Home</a></li><li><a href="tools.html" aria-current="page">Popular Tools</a></li><li><a href="diy.html">DIY</a></li><li><a href="tips.html">Tips</a></li></ul></nav>
+        <button class="theme" id="themeToggle" type="button" aria-label="Switch to dark mode">
+          <svg class="moon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>
+          <span class="label">Dark</span>
+        </button>
+      </div>
     </div>
   </header>
+  <main id="main" class="wrap">
+    <section class="hero" aria-labelledby="h1">
+      <div>
+        <p class="eyebrow">Lesson 2 &middot; About 5 minutes</p>
+        <h1 id="h1">Popular <span class="hl">Tools</span></h1>
+        <p class="lede">There are two ways in: tools made for building apps, and the everyday AI chatbots that can write code too.</p>
+        <ul class="meta" aria-label="Goal"><li>Goal: choose a tool that fits you</li></ul>
+      </div>
+      <img class="hero-art sm" src="images/mascot-phone.webp" alt="" width="480" height="488">
+    </section>
 
-  <main class="wrap">
-    <section class="hero">
-      <p class="eyebrow">Page 01</p>
-      <h1>Popular <em>Tools</em></h1>
-      <p class="lede">Two ways to vibecode: tools made for building apps, and the everyday AI chatbots that can write code too.</p>
+    <section aria-labelledby="choose-h">
+      <h2 id="choose-h">How to choose</h2>
+      <p class="note">Start from your situation, not from the longest feature list.</p>
+      <div class="cols">
+        <div class="glass card"><h3>New to all of this?</h3><p>Pick a tool marked <span class="tag easy">Beginner friendly</span>. Use the filter below to see only those.</p></div>
+        <div class="glass card"><h3>Already use an AI chatbot?</h3><p>Stay there. The <a href="#models-h">frontier models</a> can write a full webpage for you, and that is what the DIY lesson uses.</p></div>
+        <div class="glass card"><h3>Have a specific goal?</h3><p>Check the labels. Some tools focus on one job, such as building games.</p></div>
+      </div>
     </section>
 
     <section aria-labelledby="tools-h">
       <h2 id="tools-h">Vibecoding tools</h2>
-      <p class="section-note">Click any card to open the tool in a new tab.</p>
-      <label class="filter"><input type="checkbox" id="easyOnly"> Show beginner-friendly only</label>
+      <p class="note">Each card opens the tool's website in a new tab.</p>
+      <div class="filter-row">
+        <label class="filter glass"><input type="checkbox" id="easyOnly"> Show beginner-friendly only</label>
+        <p class="count" id="toolCount" role="status">Showing 17 of 17 tools</p>
+      </div>
       <ul class="grid" id="toolGrid">
-        <li>
-          <a class="tool" href="https://replit.com/" target="_blank" rel="noopener">
-            <span class="name">Replit</span>
-            <span class="url">replit.com</span>
-          </a>
-        </li>
-        <li>
-          <a class="tool" href="https://cursor.com/en" target="_blank" rel="noopener">
-            <span class="name">Cursor</span>
-            <span class="url">cursor.com/en</span>
-          </a>
-        </li>
-        <li>
-          <a class="tool" href="https://github.com/features/copilot" target="_blank" rel="noopener">
-            <span class="name">GitHub Copilot</span>
-            <span class="url">github.com/features/copilot</span>
-          </a>
-        </li>
-        <li>
-          <a class="tool" href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener">
-            <span class="name">Claude Code</span>
-            <span class="url">code.claude.com/docs/en/overview</span>
-          </a>
-        </li>
-        <li data-easy="true">
-          <a class="tool" href="https://lovable.dev/" target="_blank" rel="noopener">
-            <span class="name">Lovable</span>
-            <span class="url">lovable.dev</span>
-            <span class="tags"><span class="tag easy">Beginner friendly</span></span>
-          </a>
-        </li>
-        <li data-easy="true">
-          <a class="tool" href="https://bolt.new/" target="_blank" rel="noopener">
-            <span class="name">Bolt</span>
-            <span class="url">bolt.new</span>
-            <span class="tags"><span class="tag easy">Beginner friendly</span></span>
-          </a>
-        </li>
-        <li data-easy="true">
-          <a class="tool" href="https://www.vibecodeapp.com/" target="_blank" rel="noopener">
-            <span class="name">Vibecode App</span>
-            <span class="url">www.vibecodeapp.com</span>
-            <span class="tags"><span class="tag easy">Beginner friendly</span></span>
-          </a>
-        </li>
-        <li>
-          <a class="tool" href="https://www.figma.com/" target="_blank" rel="noopener">
-            <span class="name">Figma Make</span>
-            <span class="url">www.figma.com</span>
-          </a>
-        </li>
-        <li>
-          <a class="tool" href="https://paper.design/" target="_blank" rel="noopener">
-            <span class="name">Paper</span>
-            <span class="url">paper.design</span>
-          </a>
-        </li>
-        <li data-easy="true">
-          <a class="tool" href="https://v0.app/" target="_blank" rel="noopener">
-            <span class="name">v0</span>
-            <span class="url">v0.app</span>
-            <span class="tags"><span class="tag easy">Beginner friendly</span></span>
-          </a>
-        </li>
-        <li data-easy="true">
-          <a class="tool" href="https://firebase.google.com/" target="_blank" rel="noopener">
-            <span class="name">Firebase</span>
-            <span class="url">firebase.google.com</span>
-            <span class="tags"><span class="tag google">By Google</span><span class="tag easy">Beginner friendly</span></span>
-          </a>
-        </li>
-        <li>
-          <a class="tool" href="https://antigravity.google/" target="_blank" rel="noopener">
-            <span class="name">Antigravity</span>
-            <span class="url">antigravity.google</span>
-            <span class="tags"><span class="tag google">By Google</span></span>
-          </a>
-        </li>
-        <li>
-          <a class="tool" href="https://base44.com/" target="_blank" rel="noopener">
-            <span class="name">Base44</span>
-            <span class="url">base44.com</span>
-          </a>
-        </li>
-        <li>
-          <a class="tool" href="https://www.genspark.ai/" target="_blank" rel="noopener">
-            <span class="name">Genspark</span>
-            <span class="url">www.genspark.ai</span>
-          </a>
-        </li>
-        <li>
-          <a class="tool" href="https://manus.im/app" target="_blank" rel="noopener">
-            <span class="name">Manus AI</span>
-            <span class="url">manus.im/app</span>
-          </a>
-        </li>
-        <li>
-          <a class="tool" href="https://jules.google/" target="_blank" rel="noopener">
-            <span class="name">Jules</span>
-            <span class="url">jules.google</span>
-          </a>
-        </li>
-        <li>
-          <a class="tool" href="https://tesana.ai/en" target="_blank" rel="noopener">
-            <span class="name">Tesana</span>
-            <span class="url">tesana.ai/en</span>
-            <span class="tags"><span class="tag special">For building games</span></span>
-          </a>
-        </li>
+        <li><a class="tool glass" href="https://replit.com/" target="_blank" rel="noopener"><span class="name">Replit<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">replit.com</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a class="tool glass" href="https://cursor.com/en" target="_blank" rel="noopener"><span class="name">Cursor<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">cursor.com/en</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a class="tool glass" href="https://github.com/features/copilot" target="_blank" rel="noopener"><span class="name">GitHub Copilot<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">github.com/features/copilot</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a class="tool glass" href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener"><span class="name">Claude Code<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">code.claude.com/docs/en/overview</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li data-easy><a class="tool glass" href="https://lovable.dev/" target="_blank" rel="noopener"><span class="name">Lovable<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">lovable.dev</span><span class="tags"><span class="tag easy">Beginner friendly</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li data-easy><a class="tool glass" href="https://bolt.new/" target="_blank" rel="noopener"><span class="name">Bolt<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">bolt.new</span><span class="tags"><span class="tag easy">Beginner friendly</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li data-easy><a class="tool glass" href="https://www.vibecodeapp.com/" target="_blank" rel="noopener"><span class="name">Vibecode App<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">www.vibecodeapp.com</span><span class="tags"><span class="tag easy">Beginner friendly</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a class="tool glass" href="https://www.figma.com/" target="_blank" rel="noopener"><span class="name">Figma Make<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">www.figma.com</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a class="tool glass" href="https://paper.design/" target="_blank" rel="noopener"><span class="name">Paper<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">paper.design</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li data-easy><a class="tool glass" href="https://v0.app/" target="_blank" rel="noopener"><span class="name">v0<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">v0.app</span><span class="tags"><span class="tag easy">Beginner friendly</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li data-easy><a class="tool glass" href="https://firebase.google.com/" target="_blank" rel="noopener"><span class="name">Firebase<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">firebase.google.com</span><span class="tags"><span class="tag google">By Google</span><span class="tag easy">Beginner friendly</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a class="tool glass" href="https://antigravity.google/" target="_blank" rel="noopener"><span class="name">Antigravity<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">antigravity.google</span><span class="tags"><span class="tag google">By Google</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a class="tool glass" href="https://base44.com/" target="_blank" rel="noopener"><span class="name">Base44<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">base44.com</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a class="tool glass" href="https://www.genspark.ai/" target="_blank" rel="noopener"><span class="name">Genspark<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">www.genspark.ai</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a class="tool glass" href="https://manus.im/app" target="_blank" rel="noopener"><span class="name">Manus AI<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">manus.im/app</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a class="tool glass" href="https://jules.google/" target="_blank" rel="noopener"><span class="name">Jules<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">jules.google</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a class="tool glass" href="https://tesana.ai/en" target="_blank" rel="noopener"><span class="name">Tesana<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">tesana.ai/en</span><span class="tags"><span class="tag special">For building games</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
       </ul>
-      <p class="source">Source: <a href="https://hawaiiai.org/vibe-coding/" target="_blank" rel="noopener">hawaiiai.org/vibe-coding</a></p>
+      <p class="source">Source: <a href="https://hawaiiai.org/vibe-coding/" target="_blank" rel="noopener">hawaiiai.org/vibe-coding<span class="sr-only"> (opens in a new tab)</span></a></p>
     </section>
 
     <section aria-labelledby="models-h">
       <h2 id="models-h">Vibecoding using frontier models</h2>
-      <p class="section-note">You can also vibecode in a regular AI chatbot. Ask for the code, then copy it out.</p>
+      <p class="note">You can also vibecode in a regular AI chatbot. Ask for the code, then copy it out.</p>
       <ul class="grid wide">
-        <li>
-          <a class="tool" href="https://chat.openai.com" target="_blank" rel="noopener">
-            <span class="name">ChatGPT</span>
-            <span class="url">chat.openai.com</span>
-            <span class="desc">GPT-5.6. Good at coding.</span>
-            <span class="tags"><span class="tag ">By OpenAI</span><span class="tag easy">Free</span></span>
-          </a>
-        </li>
-        <li>
-          <a class="tool" href="https://claude.ai/chats" target="_blank" rel="noopener">
-            <span class="name">Claude</span>
-            <span class="url">claude.ai</span>
-            <span class="desc">Good at coding.</span>
-            <span class="tags"><span class="tag ">By Anthropic</span><span class="tag easy">Free</span><span class="tag special">Login required</span></span>
-          </a>
-        </li>
-        <li>
-          <a class="tool" href="https://gemini.google.com/app" target="_blank" rel="noopener">
-            <span class="name">Gemini</span>
-            <span class="url">gemini.google.com/app</span>
-            <span class="desc">Good at searching the Internet. Good at coding.</span>
-            <span class="tags"><span class="tag google">By Google</span><span class="tag easy">Free</span></span>
-          </a>
-        </li>
-        <li>
-          <a class="tool" href="https://x.com/i/grok" target="_blank" rel="noopener">
-            <span class="name">Grok</span>
-            <span class="url">x.com/i/grok</span>
-            <span class="desc">Can generate high quality images for free.</span>
-            <span class="tags"><span class="tag ">By X</span><span class="tag easy">Free</span><span class="tag special">Login required</span></span>
-          </a>
-        </li>
+        <li><a class="tool glass" href="https://chat.openai.com" target="_blank" rel="noopener"><span class="name">ChatGPT<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">chat.openai.com</span><span class="desc">GPT-5.6. Good at coding.</span><span class="tags"><span class="tag ">By OpenAI</span><span class="tag easy">Free</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a class="tool glass" href="https://claude.ai/chats" target="_blank" rel="noopener"><span class="name">Claude<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">claude.ai</span><span class="desc">Best at coding.</span><span class="tags"><span class="tag ">By Anthropic</span><span class="tag easy">Free</span><span class="tag special">Login required</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a class="tool glass" href="https://gemini.google.com/app" target="_blank" rel="noopener"><span class="name">Gemini<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">gemini.google.com/app</span><span class="desc">Good at searching the Internet. Good at coding.</span><span class="tags"><span class="tag google">By Google</span><span class="tag easy">Free</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a class="tool glass" href="https://x.com/i/grok" target="_blank" rel="noopener"><span class="name">Grok<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="url">x.com/i/grok</span><span class="desc">Can generate high quality images for free.</span><span class="tags"><span class="tag ">By X</span><span class="tag easy">Free</span><span class="tag special">Login required</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
       </ul>
     </section>
+
+    <section aria-labelledby="check-h">
+      <h2 id="check-h">Quick check</h2>
+      <p class="note">Apply what you just read.</p>
+      <div class="quiz">
+        <fieldset class="q glass">
+          <legend><span class="qn">Question 1 of 2</span>A colleague with no coding experience wants to start today. What should they look for first?</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="tools-q1" data-fb=" More features usually means more to learn. A beginner-friendly label is a better first filter."><span>The tool with the most features.</span></label>
+            <label class="opt"><input type="radio" name="tools-q1" data-correct data-fb=" Starting where the setup is smallest gets a first result quickly, which keeps motivation up."><span>A tool marked Beginner friendly, or a chatbot they already use.</span></label>
+            <label class="opt"><input type="radio" name="tools-q1" data-fb=" Every chatbot in the frontier models list has a free option, and the DIY lesson uses only free tools."><span>A paid plan, because free tools cannot build real things.</span></label>
+          </div>
+          <button class="btn small check" type="button">Check answer</button>
+          <p class="feedback" role="status"></p>
+        </fieldset>
+        <fieldset class="q glass">
+          <legend><span class="qn">Question 2 of 2</span>Which is true about vibecoding with a chatbot such as ChatGPT, Claude or Gemini?</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="tools-q2" data-fb=" These chatbots run in a web browser. Nothing to install."><span>It only works after you install special software.</span></label>
+            <label class="opt"><input type="radio" name="tools-q2" data-correct data-fb=" That is the workflow you will use in the next lesson."><span>You can ask for the code in plain language and copy it out.</span></label>
+            <label class="opt"><input type="radio" name="tools-q2" data-fb=" All four chatbots listed can write code."><span>Chatbots can only write text, not code.</span></label>
+          </div>
+          <button class="btn small check" type="button">Check answer</button>
+          <p class="feedback" role="status"></p>
+        </fieldset>
+      </div>
+    </section>
+
+    <nav class="lesson-nav" aria-label="Lessons">
+      <a class="glass prev" href="index.html"><span class="dir">&larr; Previous</span><span class="ttl">What is vibecoding?</span></a>
+      <a class="glass next" href="diy.html"><span class="dir">Next &rarr;</span><span class="ttl">DIY: your first webpage</span></a>
+    </nav>
   </main>
-
   <footer>
-    <div class="wrap">Vibecoding 101 &middot; Ready to try? <a href="diy.html">Build your first webpage &rarr;</a></div>
+    <div class="wrap">Vibecoding 101 &middot; A four-part beginner lesson. Built with vibecoding.</div>
   </footer>
-
-  <script>
-    var box = document.getElementById('easyOnly');
-    box.addEventListener('change', function () {
-      document.querySelectorAll('#toolGrid li').forEach(function (li) {
-        li.classList.toggle('hidden', box.checked && !li.dataset.easy);
-      });
-    });
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>

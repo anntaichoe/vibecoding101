@@ -5,174 +5,234 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DIY | Vibecoding 101</title>
   <meta name="description" content="Step-by-step instructions for beginners: vibecode your first webpage and publish it for free with GitHub.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('vc101-theme'); } catch (e) {}
+      if (!t) t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to main content</a>
   <header class="topbar">
     <div class="wrap">
-      <a class="brand" href="index.html">Vibecoding <span>101</span></a>
-      <nav class="nav" aria-label="Main">
-        <a href="index.html">Home</a>
-        <a href="tools.html">Popular Tools</a>
-        <a href="diy.html" aria-current="page">DIY</a>
-      </nav>
+      <div class="bar glass">
+        <a class="brand" href="index.html"><img src="favicon.svg" alt="" width="28" height="28">Vibecoding 101</a>
+        <nav aria-label="Main"><ul class="nav"><li><a href="index.html">Home</a></li><li><a href="tools.html">Popular Tools</a></li><li><a href="diy.html" aria-current="page">DIY</a></li><li><a href="tips.html">Tips</a></li></ul></nav>
+        <button class="theme" id="themeToggle" type="button" aria-label="Switch to dark mode">
+          <svg class="moon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>
+          <span class="label">Dark</span>
+        </button>
+      </div>
     </div>
   </header>
-
-  <main class="wrap narrow">
-    <section class="hero">
-      <p class="eyebrow">Page 02</p>
-      <h1>Vibecode your <em>first webpage</em></h1>
-      <p class="lede">By the end you will have a real webpage with its own link that anyone can open. It costs nothing and takes about 20 minutes.</p>
+  <main id="main" class="wrap narrow">
+    <section class="hero" aria-labelledby="h1">
+      <div>
+        <p class="eyebrow">Lesson 3 &middot; About 20 minutes</p>
+        <h1 id="h1">DIY: vibecode your <span class="hl">first webpage</span></h1>
+        <p class="lede">You will finish with a real webpage that has its own link. Anyone can open it, and it costs nothing.</p>
+        <ul class="meta" aria-label="Goal"><li>Goal: build and publish one page</li></ul>
+      </div>
     </section>
 
-    <section class="need" aria-labelledby="need-h">
-      <strong id="need-h">What you need</strong>
-      <ul>
-        <li>A computer with a web browser</li>
-        <li>An email address (to make a free GitHub account)</li>
-        <li>A free AI chatbot. Pick one from <a href="tools.html#models-h">Popular Tools</a>.</li>
-      </ul>
-    </section>
-
-    <h2>Part 1: Make the page with AI</h2>
-    <ol class="steps">
-      <li>
-        <h3>Decide what your page is about</h3>
-        <p>Keep it small. One page about one thing: yourself, your pet, a favorite recipe, a club, a tiny game.</p>
-      </li>
-      <li>
-        <h3>Ask the AI to build it</h3>
-        <p>Open your chatbot and describe the page. Copy this prompt and change the words in [brackets]:</p>
-        <div class="prompt">
-          <div class="label">Prompt</div>
-          <button class="copy" type="button" data-copy="p1">Copy</button>
-          <p id="p1">Build me a one-page website about [my dog Mochi]. Include [a short intro, three fun facts, and a list of her favorite things]. Make it look [playful and colorful] and work well on phones. Put everything (HTML, CSS, and JavaScript) in a single file called index.html. Do not use any outside images or libraries.</p>
-        </div>
-        <p class="tip"><strong>Why one file?</strong> A single <code>index.html</code> is the easiest thing to publish. You only have one thing to copy.</p>
-      </li>
-      <li>
-        <h3>Look at it and ask for changes</h3>
-        <p>Most chatbots show a preview of the page. Talk to the AI the way you would talk to a designer:</p>
-        <ul>
-          <li>&ldquo;Make the title bigger and change the background to light blue.&rdquo;</li>
-          <li>&ldquo;Add a button that shows a random fun fact.&rdquo;</li>
-          <li>&ldquo;The text is hard to read on my phone. Fix it.&rdquo;</li>
+    <section aria-labelledby="need-h">
+      <div class="glass panel">
+        <h2 id="need-h">Before you start</h2>
+        <ul class="plain">
+          <li>A computer with a web browser</li>
+          <li>An email address, for a free GitHub account</li>
+          <li>A free AI chatbot from <a href="tools.html#models-h">Popular Tools</a></li>
         </ul>
-        <p>Repeat until you like it. This back-and-forth is vibecoding.</p>
-      </li>
-      <li>
-        <h3>Copy the final code</h3>
-        <p>When you are happy, send this so you get the whole page in one piece:</p>
-        <div class="prompt">
-          <div class="label">Prompt</div>
-          <button class="copy" type="button" data-copy="p2">Copy</button>
-          <p id="p2">Give me the complete, final index.html in one code block.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="p1-h">
+      <div class="progress glass">
+        <p id="progressText" role="status">0 of 10 steps done</p>
+        <progress id="progressBar" max="10" value="0" aria-labelledby="progressText"></progress>
+      </div>
+      <h2 id="p1-h">Part 1: Make the page with AI</h2>
+      <p class="note">Tick each step as you go. Your progress is saved in this browser.</p>
+      <ol class="steps">
+        <li class="glass">
+          <h3>Decide what your page is about</h3>
+          <p>Keep it small. One page about one thing: yourself, a hobby, a recipe, an event, a tiny game.</p>
+          <label class="done"><input type="checkbox" id="s1"> I did this</label>
+        </li>
+        <li class="glass">
+          <h3>Ask the AI to build it</h3>
+          <p>Open a free chatbot from <a href="tools.html#models-h">Popular Tools</a>. Copy this prompt and change the words in [brackets]:</p>
+          <div class="prompt">
+            <div class="prompt-head"><span class="prompt-label">Prompt</span><button class="copy" type="button" data-copy="p1" aria-label="Copy prompt">Copy</button></div>
+            <p id="p1">Build me a one-page website about [my dog Mochi]. Include [a short intro, three fun facts, and a list of her favorite things]. Make it look [playful and colorful] and work well on phones. Put everything (HTML, CSS, and JavaScript) in a single file called index.html. Do not use any outside images or libraries.</p>
+          </div>
+          <div class="callout"><p><strong>Why one file?</strong> A single <code>index.html</code> is the easiest thing to publish. You only have one thing to copy.</p></div>
+          <label class="done"><input type="checkbox" id="s2"> I did this</label>
+        </li>
+        <li class="glass">
+          <h3>Look at it and ask for changes</h3>
+          <p>Most chatbots show a preview. Talk to the AI the way you would brief a designer:</p>
+          <ul>
+            <li>&ldquo;Make the title bigger and change the background to light blue.&rdquo;</li>
+            <li>&ldquo;Add a button that shows a random fun fact.&rdquo;</li>
+            <li>&ldquo;The text is hard to read on my phone. Fix it.&rdquo;</li>
+          </ul>
+          <p>Repeat until you like it. This back-and-forth is vibecoding.</p>
+          <label class="done"><input type="checkbox" id="s3"> I did this</label>
+        </li>
+        <li class="glass">
+          <h3>Copy the final code</h3>
+          <p>When you are happy, send this so you get the whole page in one piece:</p>
+          <div class="prompt">
+            <div class="prompt-head"><span class="prompt-label">Prompt</span><button class="copy" type="button" data-copy="p2" aria-label="Copy prompt">Copy</button></div>
+            <p id="p2">Give me the complete, final index.html in one code block.</p>
+          </div>
+          <p>Use the copy button on the code block. Keep the tab open.</p>
+          <label class="done"><input type="checkbox" id="s4"> I did this</label>
+        </li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="c1-h">
+      <h2 id="c1-h">Checkpoint</h2>
+      <div class="quiz">
+        <fieldset class="q glass">
+          <legend><span class="qn">Question 1 of 1</span>Why does the prompt ask for everything in a single file called index.html?</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="diy1-q1" data-fb=" AI can create many files. One file is a choice that keeps publishing simple."><span>Because AI cannot create more than one file.</span></label>
+            <label class="opt"><input type="radio" name="diy1-q1" data-correct data-fb=" One file means one paste into GitHub, and web hosts look for index.html as the front page."><span>Because one file is the easiest thing to copy and publish.</span></label>
+            <label class="opt"><input type="radio" name="diy1-q1" data-fb=" GitHub repos can hold many files. One file keeps a first project simple."><span>Because GitHub only allows one file per account.</span></label>
+          </div>
+          <button class="btn small check" type="button">Check answer</button>
+          <p class="feedback" role="status"></p>
+        </fieldset>
+      </div>
+    </section>
+
+    <section aria-labelledby="p2-h">
+      <h2 id="p2-h">Part 2: Put it online with GitHub</h2>
+      <p class="note">GitHub stores your file for free. A feature called GitHub Pages turns it into a live website.</p>
+      <ol class="steps" start="5" style="counter-reset: step 4">
+        <li class="glass">
+          <h3>Create a free GitHub account</h3>
+          <p>Go to <a href="https://github.com/signup" target="_blank" rel="noopener">github.com/signup<span class="sr-only"> (opens in a new tab)</span></a>. Enter your email, a password and a username, then verify your email.</p>
+          <div class="callout"><p><strong>Choose your username with care.</strong> It becomes part of your website's address.</p></div>
+          <label class="done"><input type="checkbox" id="s5"> I did this</label>
+        </li>
+        <li class="glass">
+          <h3>Create a repository</h3>
+          <p>A repository, or &ldquo;repo,&rdquo; is a folder for your project.</p>
+          <ol>
+            <li>Select the <span class="ui">+</span> in the top right corner, then <span class="ui">New repository</span>.</li>
+            <li>Type a name with no spaces, such as <code>my-first-site</code>.</li>
+            <li>Choose <span class="ui">Public</span>.</li>
+            <li>Turn on <span class="ui">Add a README file</span>.</li>
+            <li>Select <span class="ui">Create repository</span>.</li>
+          </ol>
+          <label class="done"><input type="checkbox" id="s6"> I did this</label>
+        </li>
+        <li class="glass">
+          <h3>Add your page</h3>
+          <ol>
+            <li>In your new repo, select <span class="ui">Add file</span>, then <span class="ui">Create new file</span>.</li>
+            <li>Name the file exactly <code>index.html</code>, all lowercase.</li>
+            <li>Select the large empty box and paste the code from the AI.</li>
+            <li>Select the green <span class="ui">Commit changes</span> button, then <span class="ui">Commit changes</span> again in the pop-up. &ldquo;Commit&rdquo; means save.</li>
+          </ol>
+          <label class="done"><input type="checkbox" id="s7"> I did this</label>
+        </li>
+        <li class="glass">
+          <h3>Turn on GitHub Pages</h3>
+          <ol>
+            <li>Select the <span class="ui">Settings</span> tab at the top of your repo.</li>
+            <li>Select <span class="ui">Pages</span> in the left sidebar.</li>
+            <li>Under &ldquo;Build and deployment,&rdquo; set Source to <span class="ui">Deploy from a branch</span>.</li>
+            <li>Under Branch, choose <span class="ui">main</span> and <span class="ui">/ (root)</span>, then select <span class="ui">Save</span>.</li>
+          </ol>
+          <label class="done"><input type="checkbox" id="s8"> I did this</label>
+        </li>
+        <li class="glass">
+          <h3>Visit your live site</h3>
+          <p>Wait a minute or two, then refresh the Pages settings screen. Your link appears at the top and looks like this:</p>
+          <p><code>https://your-username.github.io/my-first-site/</code></p>
+          <p>Open it, then send it to someone.</p>
+          <label class="done"><input type="checkbox" id="s9"> I did this</label>
+        </li>
+        <li class="glass">
+          <h3>Make one improvement</h3>
+          <ol>
+            <li>Ask the AI for a change, then ask for the complete <code>index.html</code> again.</li>
+            <li>In your repo, open <code>index.html</code> and select the pencil icon to edit.</li>
+            <li>Select everything, delete it, and paste the new code.</li>
+            <li>Select <span class="ui">Commit changes</span>. Your live site updates in about a minute.</li>
+          </ol>
+          <label class="done"><input type="checkbox" id="s10"> I did this</label>
+        </li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="fix-h">
+      <h2 id="fix-h">If something goes wrong</h2>
+      <div class="stack">
+        <details class="glass"><summary>My link shows a &ldquo;404&rdquo; page</summary><div class="inner"><p>Wait a few minutes and refresh. If it still fails, check that the file is named exactly <code>index.html</code>, that it sits at the top level of the repo and not inside a folder, and that Pages is set to the <code>main</code> branch.</p></div></details>
+        <details class="glass"><summary>Pages is not available in Settings</summary><div class="inner"><p>On a free account the repo must be Public. In Settings, scroll to the bottom and change the visibility to Public.</p></div></details>
+        <details class="glass"><summary>My changes are not showing up</summary><div class="inner"><p>Give it a minute, then do a hard refresh: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> on Windows, or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> on Mac.</p></div></details>
+        <details class="glass"><summary>The page looks broken or a button does nothing</summary><div class="inner"><p>That is a debugging problem, and the <a href="tips.html">Tips lesson</a> shows how to hand it to the AI.</p></div></details>
+      </div>
+    </section>
+
+    <section aria-labelledby="c2-h">
+      <h2 id="c2-h">Quick check</h2>
+      <div class="quiz">
+        <fieldset class="q glass">
+          <legend><span class="qn">Question 1 of 2</span>On GitHub, what does &ldquo;Commit changes&rdquo; do?</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="diy2-q1" data-fb=" GitHub keeps your history. Committing saves a new version on top."><span>It deletes the old version of your site forever.</span></label>
+            <label class="opt"><input type="radio" name="diy2-q1" data-correct data-fb=" A commit is a save. Once Pages is on, each commit also updates your live site."><span>It saves your changes to the repo.</span></label>
+            <label class="opt"><input type="radio" name="diy2-q1" data-fb=" GitHub and your chatbot are separate. You copy code between them yourself."><span>It sends your code to the AI.</span></label>
+          </div>
+          <button class="btn small check" type="button">Check answer</button>
+          <p class="feedback" role="status"></p>
+        </fieldset>
+        <fieldset class="q glass">
+          <legend><span class="qn">Question 2 of 2</span>Your link shows a 404 page five minutes after setup. What do you check first?</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="diy2-q2" data-correct data-fb=" A misnamed or misplaced file is the most common cause. Then confirm Pages points to the main branch."><span>That the file is named exactly index.html and sits at the top level.</span></label>
+            <label class="opt"><input type="radio" name="diy2-q2" data-fb=" The site lives on GitHub&#x27;s servers, so your own storage is not involved."><span>That your computer has enough storage.</span></label>
+            <label class="opt"><input type="radio" name="diy2-q2" data-fb=" GitHub Pages is free for public repos."><span>That you paid for hosting.</span></label>
+          </div>
+          <button class="btn small check" type="button">Check answer</button>
+          <p class="feedback" role="status"></p>
+        </fieldset>
+      </div>
+    </section>
+
+    <section aria-labelledby="done-h">
+      <div class="glass panel finish">
+        <img src="images/mascot-pickleball.webp" alt="" width="520" height="399">
+        <div>
+          <h2 id="done-h">You shipped a website</h2>
+          <p>You described an idea, directed an AI, and published the result. That is the full vibecoding loop.</p>
+          <p><strong>Reflect:</strong> what is one small thing in your work or life that a simple page or tool could make easier? Bring that idea to the next lesson.</p>
         </div>
-        <p>Click the <span class="ui">Copy</span> button on the code block. Keep this tab open.</p>
-      </li>
-    </ol>
+      </div>
+    </section>
 
-    <h2>Part 2: Put it online with GitHub</h2>
-    <p class="section-note">GitHub stores your file for free and turns it into a live website with a feature called GitHub Pages.</p>
-    <ol class="steps">
-      <li>
-        <h3>Create a free GitHub account</h3>
-        <p>Go to <a href="https://github.com/signup" target="_blank" rel="noopener">github.com/signup</a>. Enter your email, a password, and a username, then verify your email.</p>
-        <p class="tip"><strong>Choose your username with care.</strong> It becomes part of your website's address.</p>
-      </li>
-      <li>
-        <h3>Create a repository</h3>
-        <p>A repository (&ldquo;repo&rdquo;) is a folder for your project.</p>
-        <ol>
-          <li>Click the <span class="ui">+</span> in the top right corner, then <span class="ui">New repository</span>.</li>
-          <li>Type a name with no spaces, such as <code>my-first-site</code>.</li>
-          <li>Choose <span class="ui">Public</span>.</li>
-          <li>Turn on <span class="ui">Add a README file</span>.</li>
-          <li>Click <span class="ui">Create repository</span>.</li>
-        </ol>
-      </li>
-      <li>
-        <h3>Add your page</h3>
-        <ol>
-          <li>In your new repo, click <span class="ui">Add file</span>, then <span class="ui">Create new file</span>.</li>
-          <li>Name the file exactly <code>index.html</code> (all lowercase).</li>
-          <li>Click in the big empty box and paste the code from the AI.</li>
-          <li>Click the green <span class="ui">Commit changes</span> button, then <span class="ui">Commit changes</span> again in the pop-up. &ldquo;Commit&rdquo; just means save.</li>
-        </ol>
-      </li>
-      <li>
-        <h3>Turn on GitHub Pages</h3>
-        <ol>
-          <li>Click the <span class="ui">Settings</span> tab at the top of your repo.</li>
-          <li>Click <span class="ui">Pages</span> in the left sidebar.</li>
-          <li>Under &ldquo;Build and deployment,&rdquo; set Source to <span class="ui">Deploy from a branch</span>.</li>
-          <li>Under Branch, choose <span class="ui">main</span> and <span class="ui">/ (root)</span>, then click <span class="ui">Save</span>.</li>
-        </ol>
-      </li>
-      <li>
-        <h3>Visit your live site</h3>
-        <p>Wait a minute or two, then refresh the Pages settings screen. Your link appears at the top. It looks like this:</p>
-        <p><code>https://your-username.github.io/my-first-site/</code></p>
-        <p>Open it. Send it to a friend. You have a website.</p>
-      </li>
-      <li>
-        <h3>Keep improving it</h3>
-        <ol>
-          <li>Go back to the AI and ask for a change, then ask for the complete <code>index.html</code> again.</li>
-          <li>In your repo, click <code>index.html</code>, then the pencil icon to edit.</li>
-          <li>Select everything, delete it, and paste the new code.</li>
-          <li>Click <span class="ui">Commit changes</span>. Your live site updates in about a minute.</li>
-        </ol>
-      </li>
-    </ol>
-
-    <h2>If something goes wrong</h2>
-    <div class="fix">
-      <details>
-        <summary>My link shows a &ldquo;404&rdquo; page</summary>
-        <p>Wait a few minutes and refresh. If it still fails, check that the file is named exactly <code>index.html</code>, that it sits at the top level of the repo (not inside a folder), and that Pages is set to the <code>main</code> branch.</p>
-      </details>
-      <details>
-        <summary>I don't see &ldquo;Pages&rdquo; working in Settings</summary>
-        <p>On a free account the repo must be Public. Go to Settings, scroll to the bottom, and change the visibility to Public.</p>
-      </details>
-      <details>
-        <summary>My changes are not showing up</summary>
-        <p>Give it a minute, then do a hard refresh: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> on Windows or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> on Mac.</p>
-      </details>
-      <details>
-        <summary>The page looks broken or a button does nothing</summary>
-        <p>Tell the AI exactly what you see and what you expected. Paste any error message. Then replace your file with the corrected code.</p>
-      </details>
-    </div>
+    <nav class="lesson-nav" aria-label="Lessons">
+      <a class="glass prev" href="tools.html"><span class="dir">&larr; Previous</span><span class="ttl">Popular Tools</span></a>
+      <a class="glass next" href="tips.html"><span class="dir">Next &rarr;</span><span class="ttl">Tips: debug and think bigger</span></a>
+    </nav>
   </main>
-
   <footer>
-    <div class="wrap narrow">Vibecoding 101 &middot; Want more power? See <a href="tools.html">Popular Tools</a>.</div>
+    <div class="wrap">Vibecoding 101 &middot; A four-part beginner lesson. Built with vibecoding.</div>
   </footer>
-
-  <script>
-    document.querySelectorAll('.copy').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var text = document.getElementById(btn.dataset.copy).textContent;
-        var done = function () {
-          btn.textContent = 'Copied';
-          setTimeout(function () { btn.textContent = 'Copy'; }, 1500);
-        };
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(text).then(done);
-        } else {
-          var ta = document.createElement('textarea');
-          ta.value = text;
-          document.body.appendChild(ta);
-          ta.select();
-          document.execCommand('copy');
-          document.body.removeChild(ta);
-          done();
-        }
-      });
-    });
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
