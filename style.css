@@ -124,7 +124,8 @@ h1 { font-size: clamp(2.2rem, 6.4vw, 4rem); font-weight: 700; }
 h1 .hl { color: var(--accent); }
 h2 { font-size: clamp(1.55rem, 3.6vw, 2.1rem); font-weight: 700; margin: 0 0 8px; }
 h3 { font-size: 1.2rem; font-weight: 650; line-height: 1.25; }
-p { margin: 0 0 12px; }
+p { margin: 0 0 12px; text-wrap: pretty; }
+h1, h2, h3, .lede, .note, .tagline { text-wrap: balance; }
 .eyebrow { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px; }
 .lede + .lede { margin-top: 12px; }
 .card .plain { color: var(--muted); }
@@ -326,6 +327,15 @@ h2 .hl { color: var(--accent); }
 .ref .dom { margin-top: auto; padding-top: 8px; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.8rem; color: var(--muted); overflow-wrap: anywhere; }
 .ref-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 12px; }
 @media (max-width: 1000px) { .refgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .ref-groups { grid-template-columns: 1fr; gap: 0; } }
+
+/* Items separated by short vertical lines */
+.vwrap { overflow: hidden; padding: 6px; margin: -6px; }
+.vgrid { list-style: none; margin: 0 0 0 -25px; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 30px; }
+.vgrid li { display: flex; flex-direction: column; gap: 4px; padding: 2px 24px; border-left: 1px solid var(--control-border); }
+.vgrid a { font-size: 1.12rem; font-weight: 650; letter-spacing: -0.01em; text-decoration: none; }
+.vgrid a:hover { text-decoration: underline; }
+.vgrid span { color: var(--muted); font-size: 0.97rem; line-height: 1.45; }
+@media (max-width: 1000px) { .vgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 /* Definition box */
 .define-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin: 0 0 4px; }
