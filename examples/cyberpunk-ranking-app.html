@@ -42,26 +42,26 @@
         <div class="absolute inset-0 cyberpunk-bg"></div>
         
         <!-- Main Content -->
-        <div class="relative z-10 p-6">
+        <div class="relative z-10 p-4 sm:p-6">
             <div class="max-w-7xl mx-auto">
                 <!-- Title -->
-                <h1 class="text-5xl font-bold text-center mb-12 gradient-text font-mono tracking-widest uppercase">
+                <h1 class="text-2xl sm:text-4xl lg:text-5xl font-bold text-center mb-6 sm:mb-12 gradient-text font-mono tracking-wider sm:tracking-widest uppercase break-words">
                     who will go first?
                 </h1>
 
                 <!-- Input Section -->
-                <div class="relative bg-black/90 border-2 border-yellow-400 rounded-none shadow-2xl p-6 mb-8 backdrop-blur-sm">
+                <div class="relative bg-black/90 border-2 border-yellow-400 rounded-none shadow-2xl p-4 sm:p-6 mb-6 sm:mb-8 backdrop-blur-sm">
                     <div class="absolute -top-1 -left-1 w-4 h-4 bg-yellow-400"></div>
                     <div class="absolute -top-1 -right-1 w-4 h-4 bg-yellow-400"></div>
                     <div class="absolute -bottom-1 -left-1 w-4 h-4 bg-yellow-400"></div>
                     <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-yellow-400"></div>
                     
-                    <div class="flex gap-4 mb-4">
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-4">
                         <input
                             type="text"
                             id="nameInput"
                             placeholder="enter name..."
-                            class="flex-1 px-4 py-3 bg-black border-2 border-green-500 rounded-none focus:outline-none focus:border-yellow-400 text-yellow-400 placeholder-gray-600 font-mono text-lg tracking-wider uppercase"
+                            class="flex-1 min-w-0 w-full px-4 py-3 bg-black border-2 border-green-500 rounded-none focus:outline-none focus:border-yellow-400 text-yellow-400 placeholder-gray-600 font-mono text-lg tracking-wider uppercase"
                         />
                         <button
                             id="addBtn"
@@ -80,13 +80,13 @@
                 </div>
 
                 <!-- Main Panels -->
-                <div class="flex gap-8">
+                <div class="flex flex-col md:flex-row gap-6 md:gap-8">
                     <!-- Names Panel -->
-                    <div class="flex-1 relative bg-black/90 border-2 border-green-500 rounded-none shadow-2xl p-6 backdrop-blur-sm">
+                    <div class="flex-1 min-w-0 relative bg-black/90 border-2 border-green-500 rounded-none shadow-2xl p-4 sm:p-6 backdrop-blur-sm">
                         <div class="absolute -top-1 -left-1 w-3 h-3 bg-green-500"></div>
                         <div class="absolute -top-1 -right-1 w-3 h-3 bg-green-500"></div>
                         
-                        <h2 class="text-2xl font-black mb-6 text-green-400 font-mono tracking-widest uppercase border-b-2 border-green-400 pb-2">
+                        <h2 class="text-lg sm:text-2xl font-black mb-6 text-green-400 font-mono tracking-widest uppercase border-b-2 border-green-400 pb-2">
                             neural links (<span id="nameCount">0</span>)
                         </h2>
                         
@@ -97,7 +97,7 @@
                         <div id="runSection" class="mt-8 hidden">
                             <button
                                 id="runBtn"
-                                class="w-full py-4 rounded-none font-black transition-all duration-200 font-mono border-4 tracking-widest uppercase text-xl transform bg-green-600 text-black hover:bg-yellow-400 hover:text-black border-green-600 hover:border-yellow-400 shadow-2xl hover:scale-105"
+                                class="w-full py-4 rounded-none font-black transition-all duration-200 font-mono border-4 tracking-wider sm:tracking-widest uppercase text-base sm:text-xl transform bg-green-600 text-black hover:bg-yellow-400 hover:text-black border-green-600 hover:border-yellow-400 shadow-2xl hover:scale-105"
                             >
                                 run protocol
                             </button>
@@ -105,11 +105,11 @@
                     </div>
 
                     <!-- Rankings Panel -->
-                    <div class="flex-1 relative bg-black/90 border-2 border-yellow-500 rounded-none shadow-2xl p-6 backdrop-blur-sm">
+                    <div class="flex-1 min-w-0 relative bg-black/90 border-2 border-yellow-500 rounded-none shadow-2xl p-4 sm:p-6 backdrop-blur-sm">
                         <div class="absolute -top-1 -left-1 w-3 h-3 bg-yellow-500"></div>
                         <div class="absolute -top-1 -right-1 w-3 h-3 bg-yellow-500"></div>
                         
-                        <h2 class="text-2xl font-black mb-6 text-yellow-400 font-mono tracking-widest uppercase border-b-2 border-yellow-400 pb-2">
+                        <h2 class="text-lg sm:text-2xl font-black mb-6 text-yellow-400 font-mono tracking-widest uppercase border-b-2 border-yellow-400 pb-2">
                             order
                         </h2>
                         
@@ -206,7 +206,7 @@
                     
                     return `
                         <div class="${classes}">
-                            <span class="font-black tracking-wider uppercase text-lg">${name}</span>
+                            <span class="font-black tracking-wider uppercase text-lg break-all min-w-0">${name}</span>
                             ${isAvailable ? `<button onclick="removeName(${index})" ${isRunning ? 'disabled' : ''} class="text-green-400 hover:text-yellow-400 text-2xl font-black transform hover:scale-125 transition-all">×</button>` : ''}
                         </div>
                     `;
@@ -226,7 +226,7 @@
                         <div class="relative flex items-center p-4 rounded-none border-2 transition-all duration-300 font-mono ${classes}">
                             <div class="flex items-center">
                                 <span class="font-black text-2xl w-12 text-yellow-400 tracking-wider">${String(index + 1).padStart(2, '0')}.</span>
-                                <span class="ml-4 text-lg font-black tracking-wider uppercase ${rankedName ? 'text-green-400' : 'text-gray-600'}">${rankedName || 'empty slot'}</span>
+                                <span class="ml-4 text-lg font-black tracking-wider uppercase break-all min-w-0 ${rankedName ? 'text-green-400' : 'text-gray-600'}">${rankedName || 'empty slot'}</span>
                             </div>
                         </div>
                     `;
@@ -236,11 +236,11 @@
             // Update run button
             if (isRunning) {
                 runBtn.textContent = 'executing...';
-                runBtn.className = 'w-full py-4 rounded-none font-black transition-all duration-200 font-mono border-4 tracking-widest uppercase text-xl transform bg-gray-800 text-gray-500 cursor-not-allowed border-gray-600';
+                runBtn.className = 'w-full py-4 rounded-none font-black transition-all duration-200 font-mono border-4 tracking-wider sm:tracking-widest uppercase text-base sm:text-xl transform bg-gray-800 text-gray-500 cursor-not-allowed border-gray-600';
                 runBtn.disabled = true;
             } else {
                 runBtn.textContent = 'run protocol';
-                runBtn.className = 'w-full py-4 rounded-none font-black transition-all duration-200 font-mono border-4 tracking-widest uppercase text-xl transform bg-green-600 text-black hover:bg-yellow-400 hover:text-black border-green-600 hover:border-yellow-400 shadow-2xl hover:scale-105';
+                runBtn.className = 'w-full py-4 rounded-none font-black transition-all duration-200 font-mono border-4 tracking-wider sm:tracking-widest uppercase text-base sm:text-xl transform bg-green-600 text-black hover:bg-yellow-400 hover:text-black border-green-600 hover:border-yellow-400 shadow-2xl hover:scale-105';
                 runBtn.disabled = false;
             }
         }

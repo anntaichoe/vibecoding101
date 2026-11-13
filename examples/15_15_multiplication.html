@@ -76,6 +76,16 @@
             0%, 100% { opacity: 0.8; }
             50% { opacity: 1; }
         }
+
+        /* Responsive: fit small screens and pop-up windows */
+        *, *::before, *::after { box-sizing: border-box; }
+        body { height: auto; min-height: 100vh; padding: 16px; overflow-x: hidden; overflow-y: auto; }
+        #quiz-container { max-width: 400px; padding: clamp(20px, 6vw, 40px); position: relative; z-index: 1; }
+        #quiz-container h1 { font-size: clamp(1.3rem, 6vw, 2rem); margin-top: 0; }
+        body > h1 { font-size: clamp(1.5rem, 7vw, 36px) !important; position: relative; z-index: 1; }
+        input[type="text"] { width: 100%; }
+        #start-button, #submit-button { min-height: 44px; }
+        .star { position: fixed; pointer-events: none; }
     </style>
 </head>
 <body>
