@@ -524,3 +524,29 @@ html.scrolled .brand { display: none; }
 a.glass:hover, .opt:hover, label.filter:hover, details.glass > summary:hover { background-color: var(--glass-hover); }
 .opt:hover { background: var(--glass-hover); }
 a.glass:hover { transform: translateY(-2px); }
+
+/* Home ideas: one quiet row per idea, example revealed on request */
+.idea-list { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--hairline); }
+.idea-list > li { border-top: 1px solid var(--hairline); }
+.idea-row { display: grid; grid-template-columns: 44px minmax(0, 260px) minmax(0, 1fr) auto; align-items: baseline; column-gap: 20px; padding: 20px 0; min-height: 0; }
+.idea-list summary.idea-row { cursor: pointer; list-style: none; font-weight: inherit; }
+.idea-list summary.idea-row::before { content: none; }
+.idea-list summary.idea-row:hover h3 { color: var(--accent); }
+.idea-row .idea-n { margin: 0; }
+.idea-row h3 { margin: 0; font-size: 1.15rem; }
+.idea-row p { margin: 0; color: var(--muted); }
+.idea-more { display: inline-flex; align-items: center; gap: 8px; font-size: 0.86rem; font-weight: 650; color: var(--accent); white-space: nowrap; }
+.idea-more::after { content: "+"; display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--control-border); color: var(--text); font-weight: 500; line-height: 1; }
+details[open] > summary .idea-more::after { content: "\2212"; }
+.idea-ex { padding: 4px 0 28px 64px; }
+.idea-ex .flowline { max-width: 760px; margin-top: 4px; }
+.idea-ex .vgrid li { padding: 2px 20px 2px 24px; }
+.idea-ex .vgrid a { font-size: 1.02rem; }
+.idea-ex .vgrid span { font-size: 0.94rem; }
+@media (max-width: 760px) {
+  .idea-row { grid-template-columns: 34px minmax(0, 1fr) auto; row-gap: 4px; column-gap: 12px; padding: 16px 0; }
+  .idea-row p { grid-column: 2 / -1; grid-row: 2; }
+  .idea-more { grid-column: 3; grid-row: 1; }
+  .idea-ex { padding: 2px 0 22px 0; }
+  .idea-ex .vgrid, .idea-ex .vgrid.three { grid-template-columns: 1fr; row-gap: 14px; }
+}
