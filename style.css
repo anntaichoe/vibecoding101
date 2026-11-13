@@ -354,7 +354,8 @@ h2 .hl { color: var(--accent); }
 /* Collapsible Vibecheck */
 details.vibe summary { min-height: 56px; gap: 14px; }
 details.vibe summary h2 { margin: 0; }
-details.vibe summary::before { width: 32px; height: 32px; font-size: 1.2rem; }
+details.vibe summary::before { width: 32px; height: 32px; background-size: 13px 1.5px, 1.5px 13px; }
+details.vibe[open] summary::before { background-size: 13px 1.5px; }
 details.vibe .quiz { margin-top: 14px; }
 
 .plainbox { margin-top: 8px; }
@@ -427,8 +428,8 @@ dialog.demo iframe { flex: 1; width: 100%; border: 0; background: #0b0c10; }
 details.glass { padding: 4px 22px; }
 details summary { min-height: 48px; display: flex; align-items: center; font-weight: 650; cursor: pointer; list-style: none; gap: 10px; }
 details summary::-webkit-details-marker { display: none; }
-details summary::before { content: "+"; flex: none; width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--control-border); display: grid; place-items: center; font-weight: 600; line-height: 1; }
-details[open] summary::before { content: "\2212"; }
+details summary::before { content: ""; flex: none; width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--control-border); background: linear-gradient(currentColor, currentColor) center / 11px 1.5px no-repeat, linear-gradient(currentColor, currentColor) center / 1.5px 11px no-repeat; }
+details[open] summary::before { background: linear-gradient(currentColor, currentColor) center / 11px 1.5px no-repeat; }
 details .inner { padding: 0 0 16px 36px; color: var(--muted); }
 details .inner p:last-child, details .inner ul:last-child { margin-bottom: 0; }
 .stack { display: grid; gap: 10px; }
@@ -551,3 +552,9 @@ details[open] > summary .idea-more svg { transform: rotate(180deg); }
   .idea-ex { padding: 2px 0 22px 0; }
   .idea-ex .vgrid, .idea-ex .vgrid.three { grid-template-columns: 1fr; row-gap: 14px; }
 }
+
+.takeaways { padding: 6px 0 0 46px; }
+.takeaways .plain { margin: 6px 0 14px; }
+.takeaways .up-next { margin: 0; color: var(--muted); }
+.soon { margin: 0; color: var(--muted); font-style: italic; }
+@media (max-width: 760px) { .takeaways { padding-left: 0; } }
