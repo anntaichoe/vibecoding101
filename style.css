@@ -340,7 +340,7 @@ h2 .hl { color: var(--accent); }
 .vgrid a { font-size: 1.12rem; font-weight: 650; letter-spacing: -0.01em; text-decoration: none; }
 .vgrid a:hover { text-decoration: underline; }
 .vgrid span { color: var(--muted); font-size: 0.97rem; line-height: 1.45; }
-@media (max-width: 1000px) { .vgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 1000px) { .vgrid, .vgrid.three { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 /* Definition box */
 .define-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin: 0 0 4px; }
@@ -401,7 +401,11 @@ details.vibe .quiz { margin-top: 14px; }
 }
 @media (prefers-reduced-motion: reduce) { .fc-inner { transition: none; } }
 
-.ideas .ex-label { margin: 14px 0 2px; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.vgrid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 18px; }
+.ideas .vgrid li { padding: 2px 16px 2px 24px; }
+.ideas .vgrid a { font-size: 1.02rem; line-height: 1.3; }
+.ideas .vgrid span { font-size: 0.92rem; }
+.ideas .ex-label { margin: 16px 0 10px; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
 .examples { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0 22px; }
 .examples a { display: inline-flex; align-items: center; min-height: 36px; font-weight: 600; }
 
@@ -489,4 +493,9 @@ html.scrolled .brand { display: none; }
   html.scrolled .bar.open .nav-txt { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
   html.scrolled .bar.open .nav a[aria-current="page"] .nav-ico { stroke-width: 2.6; }
   html.scrolled .bar.open .theme { display: inline-grid; align-self: flex-end; margin: 2px 0 0; }
+}
+
+.vgrid.one { grid-template-columns: 1fr; }
+@media (max-width: 760px) {
+  .ideas .vgrid, .ideas .vgrid.three { grid-template-columns: 1fr; row-gap: 14px; }
 }
