@@ -553,8 +553,14 @@ details[open] > summary .idea-more svg { transform: rotate(180deg); }
   .idea-ex .vgrid, .idea-ex .vgrid.three { grid-template-columns: 1fr; row-gap: 14px; }
 }
 
-.takeaways { padding: 6px 0 0 46px; }
-.takeaways .plain { margin: 6px 0 14px; }
-.takeaways .up-next { margin: 0; color: var(--muted); }
+.takeaways { padding: 10px 0 0 46px; }
+.mini-label { margin: 0 0 6px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.checks { list-style: none; margin: 0 0 20px; padding: 0; }
+.checks li { position: relative; padding: 13px 0 13px 34px; border-bottom: 1px solid var(--hairline); }
+.checks li:last-child { border-bottom: 0; }
+.checks li::before { content: ""; position: absolute; left: 4px; top: 50%; width: 12px; height: 6px; margin-top: -6px; border-left: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(-45deg); }
+.callout.up-next { margin: 0; padding: 16px 18px; }
+.callout.up-next p:last-child { margin: 0; }
+.callout.up-next .tag { font-size: 0.82rem; vertical-align: 1px; }
 .soon { margin: 0; color: var(--muted); font-style: italic; }
 @media (max-width: 760px) { .takeaways { padding-left: 0; } }
