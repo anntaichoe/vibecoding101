@@ -165,6 +165,27 @@
     draw();
   }
 
+  /* Example pop-up: open demos in a dialog instead of a new page */
+  var demo = document.getElementById('demo');
+  if (demo && demo.showModal) {
+    var frame = document.getElementById('demo-frame');
+    var demoTitle = document.getElementById('demo-title');
+    var demoOpen = document.getElementById('demo-open');
+    document.querySelectorAll('a[data-demo]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        demoTitle.textContent = link.dataset.demo;
+        frame.title = link.dataset.demo;
+        frame.src = link.href;
+        demoOpen.href = link.href;
+        demo.showModal();
+      });
+    });
+    document.getElementById('demo-close').addEventListener('click', function () { demo.close(); });
+    demo.addEventListener('click', function (e) { if (e.target === demo) demo.close(); });
+    demo.addEventListener('close', function () { frame.src = 'about:blank'; });
+  }
+
   /* Copy buttons */
   document.querySelectorAll('.copy').forEach(function (btn) {
     var label = btn.getAttribute('aria-label');

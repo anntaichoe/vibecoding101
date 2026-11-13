@@ -401,6 +401,20 @@ details.vibe .quiz { margin-top: 14px; }
 }
 @media (prefers-reduced-motion: reduce) { .fc-inner { transition: none; } }
 
+.ideas .ex-label { margin: 14px 0 2px; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.examples { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0 22px; }
+.examples a { display: inline-flex; align-items: center; min-height: 36px; font-weight: 600; }
+
+/* Example pop-up */
+dialog.demo { width: min(980px, calc(100% - 24px)); height: min(760px, calc(100% - 48px)); max-width: none; max-height: none; padding: 0; border: 1px solid var(--glass-border); border-radius: 24px; background: var(--bg); color: var(--text); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45); overflow: hidden; }
+dialog.demo[open] { display: flex; flex-direction: column; }
+dialog.demo::backdrop { background: rgba(10, 10, 16, 0.55); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.demo-bar { display: flex; align-items: center; gap: 14px; padding: 10px 12px 10px 20px; border-bottom: 1px solid var(--hairline); }
+.demo-bar h2 { margin: 0 auto 0 0; }
+.demo-bar a { font-size: 0.92rem; font-weight: 600; white-space: nowrap; }
+dialog.demo iframe { flex: 1; width: 100%; border: 0; background: #0b0c10; }
+@media (max-width: 560px) { .demo-bar a { display: none; } }
+
 /* Details */
 details.glass { padding: 4px 22px; }
 details summary { min-height: 48px; display: flex; align-items: center; font-weight: 650; cursor: pointer; list-style: none; gap: 10px; }
