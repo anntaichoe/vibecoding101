@@ -16,7 +16,7 @@
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
-  <link rel="stylesheet" href="style.css?v=33">
+  <link rel="stylesheet" href="style.css?v=34">
 </head>
 <body>
   <a class="skip" href="#main">Skip to main content</a>
@@ -49,9 +49,10 @@
       <div class="glass panel">
         <h2 id="need-h" class="h3">Prerequisites</h2>
         <ul class="plain">
-          <li>Sign up for a free Github account using your personal email (not ".edu")</li>
-          <li>Sign up for a free AI chatbot (e.g., Claude) using your personal email. Pick one from <a href="tools#models-h">Tools</a>.</li>
+          <li>A free GitHub account</li>
+          <li>A free AI chatbot, such as Claude. Pick one from <a href="tools#models-h">Tools</a>.</li>
         </ul>
+        <p style="margin:10px 0 0">Sign up for both with a personal email, not a school (.edu) one.</p>
       </div>
     </section>
 
@@ -177,40 +178,76 @@
     </section>
 
     <section aria-labelledby="p3-h">
-      <h2 id="p3-h">Part 3: Let the AI work with GitHub directly</h2>
-      <p class="note">Copying and pasting works, but there is a faster way. Connect your AI tool to GitHub, then ask for fixes in plain words. The AI reads your repo itself.</p>
-      <div class="concepts plainbox">
-        <h3>Where to find it</h3>
-        <dl>
-          <div class="concept"><dt>Claude</dt><dd><p>Called <strong>Connectors</strong>.</p></dd></div>
-          <div class="concept"><dt>ChatGPT</dt><dd><p>Called <strong>Plugins</strong>. Look for GitHub in the plugin directory.</p></dd></div>
-          <div class="concept"><dt>Grok</dt><dd><p>Called <strong>Connectors</strong>. Add one at grok.com/connectors.</p></dd></div>
-        </dl>
-      </div>
-      <h3 class="sub">Steps</h3>
+      <h2 id="p3-h">Part 3: Connect your AI tool to GitHub</h2>
+      <p class="note">Once connected, the AI reads your repo itself, so you no longer paste your code into the chat. These steps use Claude and work on the free plan.</p>
       <ol class="steps">
         <li class="glass">
-          <h3>Open the connection settings in your AI tool</h3>
-          <p>Use the names in the table above. Look for GitHub in the list.</p>
+          <h3>Connect GitHub to Claude</h3>
+          <ol>
+            <li>Sign in to <a href="https://github.com/" target="_blank" rel="noopener">github.com<span class="sr-only"> (opens in a new tab)</span></a> in your browser first, with the account that owns your repo.</li>
+            <li>In Claude, open <span class="ui">Customize</span>, then <span class="ui">Connectors</span>.</li>
+            <li>Select <span class="ui">GitHub Integration</span>, then <span class="ui">Connect</span>.</li>
+            <li>GitHub asks you to authorize Claude. Approve it.</li>
+          </ol>
         </li>
         <li class="glass">
-          <h3>Connect your GitHub account</h3>
-          <p>Sign in to GitHub when asked and approve the connection. If you are given a choice, share only the repo you are working on.</p>
+          <h3>Give Claude access to your repo</h3>
+          <p>This is the step people miss. Connecting your account is not enough: the Claude GitHub App also has to be installed on your repo.</p>
+          <ol>
+            <li>Go to <a href="https://github.com/apps/claude/installations/new" target="_blank" rel="noopener">github.com/apps/claude/installations/new<span class="sr-only"> (opens in a new tab)</span></a>.</li>
+            <li>Choose your own GitHub account.</li>
+            <li>Choose <span class="ui">Only select repositories</span> and pick your repo, or choose <span class="ui">All repositories</span>.</li>
+            <li>Click <span class="ui">Install</span>.</li>
+          </ol>
+        </li>
+        <li class="glass">
+          <h3>Add your repo to a chat</h3>
+          <ol>
+            <li>Start a new chat in Claude.</li>
+            <li>Click the <span class="ui">+</span> at the lower left of the message box, then <span class="ui">Add from GitHub</span>.</li>
+            <li>Search for your repo, or paste its address, such as <code>https://github.com/your-username/my-first-site</code>.</li>
+            <li>Click <span class="ui">Add repository</span>.</li>
+          </ol>
         </li>
         <li class="glass">
           <h3>Ask for the fix in plain words</h3>
           <p>Describe the problem the same way you would in the Tips tab. Copy this prompt and change the words in [brackets]:</p>
           <div class="prompt">
             <div class="prompt-head"><span class="prompt-label">Prompt</span><button class="copy" type="button" data-copy="p5" aria-label="Copy prompt"><svg class="i-copy" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="i-done" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button></div>
-            <p id="p5">Look at my GitHub repo [my-first-site]. On my page, [the Submit button does nothing on my phone]. Find the cause in index.html and explain it in plain words. If you are able to save changes to the repo, fix it and tell me what you changed. If not, give me the complete corrected index.html.</p>
+            <p id="p5">Look at the GitHub repo I added. On my page, [the Submit button does nothing on my phone]. Find the cause in index.html and explain it in plain words. Then give me the complete corrected index.html in one code block.</p>
           </div>
         </li>
         <li class="glass">
-          <h3>Check your live site</h3>
-          <p>If the AI saved the change, refresh your site after a minute. If it could only read the repo, paste the corrected file yourself using step 3 of Part 2.</p>
+          <h3>Save the fix and check your site</h3>
+          <p>On the free plan Claude can read your repo but cannot change it, so you save the fix yourself.</p>
+          <ol>
+            <li>Copy the corrected code from Claude.</li>
+            <li>In your repo, open <code>index.html</code>, click the pencil icon, replace everything, and click <span class="ui">Commit changes</span>.</li>
+            <li>Refresh your live site after about a minute.</li>
+          </ol>
+          <p>Next time, start a new chat and add the repo again so Claude sees the latest version.</p>
         </li>
       </ol>
-      <div class="callout tip"><p><span class="bulb" aria-hidden="true">&#128161;</span> <strong>Names and abilities change often.</strong> Some connections can only read your repo, and what you get can depend on your plan. If you cannot find it, search your AI tool's settings for &ldquo;GitHub&rdquo;.</p></div>
+
+      <h3 class="sub">If the connection does not work</h3>
+      <div class="stack">
+        <details class="glass"><summary>Claude says it cannot access my repo</summary><div class="inner"><p>The Claude GitHub App is not installed on that repo yet. Repeat step 2. To check, go to <a href="https://github.com/settings/installations" target="_blank" rel="noopener">github.com/settings/installations<span class="sr-only"> (opens in a new tab)</span></a>, click <span class="ui">Configure</span> next to Claude, and make sure your repo is listed under <span class="ui">Repository access</span>.</p></div></details>
+        <details class="glass"><summary>My repo does not show up in the list</summary><div class="inner"><p>Check that the GitHub account signed in to your browser is the one that owns the repo. A school account and a personal account are two different accounts. Then paste the repo address instead of searching for it.</p></div></details>
+        <details class="glass"><summary>It says Connected but still fails</summary><div class="inner"><p>In <span class="ui">Customize</span>, then <span class="ui">Connectors</span>, disconnect GitHub and connect it again. Then start a new chat. Access changes sometimes need a reconnect to take effect, and it can take a second try.</p></div></details>
+        <details class="glass"><summary>The Claude desktop app gets stuck or keeps looping</summary><div class="inner"><p>Connect GitHub from <a href="https://claude.ai/" target="_blank" rel="noopener">claude.ai<span class="sr-only"> (opens in a new tab)</span></a> in a web browser instead. The connection belongs to your Claude account, so it then shows up in the desktop app too.</p></div></details>
+        <details class="glass"><summary>I cannot install the app with my school account</summary><div class="inner"><p>School-managed accounts can block app installs. Use a personal GitHub account and a personal Claude account.</p></div></details>
+      </div>
+
+      <div class="callout tip"><p><span class="bulb" aria-hidden="true">&#128161;</span> <strong>Want the AI to save changes for you?</strong> That goes beyond the free connection, which is read-only. In Claude it means using Claude Code at claude.ai/code, which is part of paid plans, with the Claude GitHub App installed on your repo.</p></div>
+
+      <h3 class="sub">Using a different AI tool?</h3>
+      <p class="note">The steps differ, but the idea is the same: connect your GitHub account, then give the tool access to your repo.</p>
+      <div class="concepts plainbox">
+        <dl>
+          <div class="concept"><dt>ChatGPT</dt><dd><p>Called <strong>Plugins</strong>. Look for GitHub in the plugin directory.</p></dd></div>
+          <div class="concept"><dt>Grok</dt><dd><p>Called <strong>Connectors</strong>. Add one at grok.com/connectors.</p></dd></div>
+        </dl>
+      </div>
     </section>
 
     <section aria-labelledby="fix-h">
@@ -276,7 +313,7 @@
             <li>Built a webpage by describing it to an AI in plain language.</li>
             <li>Learned the core GitHub terms, such as repo, commit and branch.</li>
             <li>Published your page for free with GitHub Pages.</li>
-            <li>Connected your AI tool to GitHub so it can make fixes directly.</li>
+            <li>Connected your AI tool to GitHub so it can read your code directly.</li>
           </ul>
           <div class="callout up-next">
             <p class="mini-label">Up next</p>
@@ -290,6 +327,6 @@
   <footer>
     <div class="wrap">made with aloha</div>
   </footer>
-  <script src="app.js?v=33"></script>
+  <script src="app.js?v=34"></script>
 </body>
 </html>

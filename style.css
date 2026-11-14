@@ -564,3 +564,5 @@ details[open] > summary .idea-more svg { transform: rotate(180deg); }
 .callout.up-next .tag { font-size: 0.82rem; vertical-align: 1px; }
 .soon { margin: 0; color: var(--muted); font-style: italic; }
 @media (max-width: 760px) { .takeaways { padding-left: 0; } }
+
+.stack + .callout.tip { margin-top: 22px; }
